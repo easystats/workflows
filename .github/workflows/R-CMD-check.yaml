@@ -4,7 +4,7 @@
 on:
   workflow_call:
 
-name: R-CMD-check
+#name: R-CMD-check
 
 jobs:
   R-CMD-check:
@@ -49,7 +49,10 @@ jobs:
 
       - uses: r-lib/actions/setup-r-dependencies@v2
         with:
-          extra-packages: any::rcmdcheck
+          extra-packages: |
+            any::rcmdcheck
+            emmeans=?ignore-before-r=4.1.0
+            rmcorr=?ignore-before-r=4.1.0
           needs: check
 
       - uses: r-lib/actions/check-r-package@v2
