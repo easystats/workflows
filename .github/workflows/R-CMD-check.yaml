@@ -19,10 +19,14 @@ jobs:
           #- {os: macOS-latest,   r: 'devel'}
           - {os: macOS-latest,   r: 'release'}
           - {os: macOS-latest,   r: 'oldrel'}
+          - {os: macOS-latest,   r: 'oldrel-2'}
+          - {os: macOS-latest,   r: 'oldrel-3'}
 
           - {os: windows-latest, r: 'devel'}
           - {os: windows-latest, r: 'release'}
           - {os: windows-latest, r: 'oldrel'}
+          - {os: windows-latest, r: 'oldrel-2'}
+          - {os: windows-latest, r: 'oldrel-3'}
 
           - {os: ubuntu-latest,  r: 'devel', http-user-agent: 'release'}
           - {os: ubuntu-latest,  r: 'release'}
