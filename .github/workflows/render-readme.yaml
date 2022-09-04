@@ -4,7 +4,7 @@
 on:
   workflow_call:
 
-name: render-readme
+#name: render-readme
 
 jobs:
   render-readme:

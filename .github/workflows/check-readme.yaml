@@ -4,7 +4,7 @@
 on:
   workflow_call:
 
-name: check-readme
+#name: check-readme
 
 jobs:
   check-readme:

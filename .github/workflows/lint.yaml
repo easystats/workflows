@@ -3,7 +3,7 @@
 on:
   workflow_call:
 
-name: lint
+#name: lint
 
 jobs:
   lint:
