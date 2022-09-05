@@ -19,8 +19,8 @@ jobs:
           #- {os: macOS-latest,   r: 'devel'}
           - {os: macOS-latest,   r: 'release'}
           - {os: macOS-latest,   r: 'oldrel'}
-          - {os: macOS-latest,   r: 'oldrel-2'}
-          - {os: macOS-latest,   r: 'oldrel-3'}
+          #- {os: macOS-latest,   r: 'oldrel-2'}
+          #- {os: macOS-latest,   r: 'oldrel-3'}
 
           - {os: windows-latest, r: 'devel'}
           - {os: windows-latest, r: 'release'}
@@ -41,9 +41,11 @@ jobs:
     steps:
       - uses: actions/checkout@v2
 
+      # Always try to use the latest pandoc version
+      # https://github.com/jgm/pandoc/releases
       - uses: r-lib/actions/setup-pandoc@v2
         with:
-            pandoc-version: '2.19.2'
+          pandoc-version: '2.19.2'
 
       - uses: r-lib/actions/setup-r@v2
         with:
@@ -51,6 +53,9 @@ jobs:
           http-user-agent: ${{ matrix.config.http-user-agent }}
           use-public-rspm: true
 
+      # TODO: Check which of the ignore conditions are still relevant given the
+      # current suggested dependencies and the minimum supported R version.
+      # Update if anything out of date or not needed anymore.
       - uses: r-lib/actions/setup-r-dependencies@v2
         with:
           extra-packages: |
@@ -59,10 +64,9 @@ jobs:
             rmcorr=?ignore-before-r=4.1.0
           needs: check
 
+      # Don't error on "note" because if any of the suggested packages are not available
+      # for a given R version, this generates a NOTE causing unnecessary build failure
       - uses: r-lib/actions/check-r-package@v2
         with:
-          error-on: '"note"'
+          error-on: '"warning"'
           upload-snapshots: true
-        # env:
-        #   _R_CHECK_CRAN_INCOMING_: false
-        #   _R_CHECK_FORCE_SUGGESTS_: false
