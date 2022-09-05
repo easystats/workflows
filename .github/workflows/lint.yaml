@@ -19,9 +19,19 @@ jobs:
 
       - uses: r-lib/actions/setup-r-dependencies@v2
         with:
-          extra-packages: r-lib/lintr, local::.
+          extra-packages: |
+            r-lib/lintr
+            local::.
           needs: lint
 
       - name: Lint
-        run: lintr::lint_package()
+        run: |
+          library(lintr)
+          lint_package(linters = linters_with_defaults(
+            object_name_linter = NULL,
+            object_usage_linter = NULL,
+            object_length_linter(40),
+            line_length_linter(120),
+            cyclocomp_linter = cyclocomp_linter(20)
+          ))
         shell: Rscript {0}
