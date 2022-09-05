@@ -32,6 +32,7 @@ jobs:
             object_usage_linter = NULL,
             object_length_linter(40),
             line_length_linter(120),
-            cyclocomp_linter = cyclocomp_linter(20)
+            cyclocomp_linter = cyclocomp_linter(20),
+            defaults = linters_with_tags(tags = NULL)
           ))
         shell: Rscript {0}
