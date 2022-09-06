@@ -65,6 +65,7 @@ jobs:
             emmeans=?ignore-before-r=4.1.0
             rmcorr=?ignore-before-r=4.1.0
             randomForest=?ignore-before-r=4.1.0
+            MuMIn=?ignore-before-r=4.2.0
           needs: check
 
       # Don't error on "note" because if any of the suggested packages are not available
