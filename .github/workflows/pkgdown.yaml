@@ -27,6 +27,8 @@ jobs:
         with:
           extra-packages: |
             r-lib/pkgdown
+            any::BH
+            any::RcppEigen
             local::.
           needs: website
 
