@@ -62,6 +62,8 @@ jobs:
         with:
           extra-packages: |
             any::rcmdcheck
+            FactoMineR=?ignore-before-r=4.0.0
+            fastICA=?ignore-before-r=4.0.0
             metafor=?ignore-before-r=4.0.0
             emmeans=?ignore-before-r=4.1.0
             rmcorr=?ignore-before-r=4.1.0
