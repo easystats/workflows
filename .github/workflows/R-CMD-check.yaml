@@ -67,7 +67,7 @@ jobs:
           extra-packages: |
             any::rcmdcheck
             EGAnet=?ignore-before-r=5.0.0
-            FactoMineR=?ignore-before-r=4.0.0
+            FactoMineR=?ignore-before-r=4.1.0
             fastICA=?ignore-before-r=4.0.0
             metafor=?ignore-before-r=4.0.0
             emmeans=?ignore-before-r=4.1.0
