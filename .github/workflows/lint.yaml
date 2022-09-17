@@ -21,6 +21,7 @@ jobs:
         with:
           extra-packages: |
             r-lib/lintr
+            EGAnet=?ignore-before-r=5.0.0
             local::.
           needs: lint
 

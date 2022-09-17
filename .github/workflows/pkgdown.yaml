@@ -27,6 +27,7 @@ jobs:
         with:
           extra-packages: |
             r-lib/pkgdown
+            EGAnet=?ignore-before-r=5.0.0
             any::BH
             any::RcppEigen
             local::.
