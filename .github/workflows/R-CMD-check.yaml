@@ -69,6 +69,8 @@ jobs:
             EGAnet=?ignore-before-r=5.0.0
             fastICA=?ignore-before-r=4.0.0
             metafor=?ignore-before-r=4.0.0
+            panelr=?ignore-before-r=4.0.0
+            jtools=?ignore-before-r=4.0.0
             FactoMineR=?ignore-before-r=4.1.0
             factoextra=?ignore-before-r=4.1.0
             emmeans=?ignore-before-r=4.1.0
