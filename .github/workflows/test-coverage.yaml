@@ -20,7 +20,9 @@ jobs:
 
       - uses: r-lib/actions/setup-r-dependencies@v2
         with:
-          extra-packages: r-lib/covr
+          extra-packages: |
+            EGAnet=?ignore-before-r=5.0.0
+            r-lib/covr
           needs: coverage
 
       - name: Test coverage
