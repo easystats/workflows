@@ -22,7 +22,10 @@ jobs:
 
       - uses: r-lib/actions/setup-r-dependencies@v2
         with:
-          extra-packages: any::rcmdcheck, any::V8
+          pak-version: devel
+          extra-packages: |
+            any::rcmdcheck
+            any::V8
           dependencies: 'character()'
 
       - name: Install pdflatex
@@ -39,4 +42,3 @@ jobs:
         env:
           _R_CHECK_CRAN_INCOMING_REMOTE_: false
           _R_CHECK_CRAN_INCOMING_: false
-          _R_CHECK_RD_XREFS_: false
