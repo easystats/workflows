@@ -19,8 +19,8 @@ jobs:
           use-public-rspm: true
 
       - uses: r-lib/actions/setup-r-dependencies@v2
-        pak-version: devel
         with:
+          pak-version: devel
           extra-packages: |
             EGAnet=?ignore-before-r=5.0.0
             r-lib/covr
