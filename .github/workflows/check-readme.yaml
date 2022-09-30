@@ -32,7 +32,16 @@ jobs:
         with:
           extra-packages: |
             deps::.
-            any::easystats
+            easystats/insight
+            easystats/datawizard
+            easystats/parameters
+            easystats/performance
+            easystats/bayestestR
+            easystats/effectsize
+            easystats/correlation
+            easystats/report
+            easystats/see
+            easystats/modelbased
 
       - name: Render README
         run: Rscript -e 'rmarkdown::render("README.Rmd")'
