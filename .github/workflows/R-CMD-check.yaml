@@ -10,7 +10,7 @@ jobs:
   R-CMD-check:
     runs-on: ${{ matrix.config.os }}
 
-    name: ${{ matrix.config.os }} (${{ matrix.config.r }})
+    name: ${{ matrix.config.os }} (${{ matrix.config.r }}) ${{ matrix.config.locale }}
 
     strategy:
       fail-fast: false
@@ -28,7 +28,11 @@ jobs:
           #- {os: windows-latest, r: 'oldrel-2'}
           #- {os: windows-latest, r: 'oldrel-3'}
 
-          - {os: ubuntu-latest,  r: 'devel', http-user-agent: 'release'}
+          # Use 3.6 to trigger usage of RTools35
+          - {os: windows-latest, r: '3.6'}
+
+          - {os: ubuntu-latest,  r: 'devel', http-user-agent: 'release', locale: 'en_US'}
+          - {os: ubuntu-latest,  r: 'devel', http-user-agent: 'release', locale: 'zh_CN'}
           - {os: ubuntu-latest,  r: 'release'}
           - {os: ubuntu-latest,  r: 'oldrel'}
           - {os: ubuntu-latest,  r: 'oldrel-2'}
@@ -41,6 +45,18 @@ jobs:
       _R_CHECK_FORCE_SUGGESTS_: false
 
     steps:
+      - name: Set locale
+        if: matrix.config.locale == 'en_US'
+        run: |
+          sudo locale-gen en_US
+          echo "LC_ALL=en_US" >> $GITHUB_ENV
+
+      - name: Set locale
+        if: matrix.config.locale == 'zh_CN'
+        run: |
+          sudo locale-gen zh_CN
+          echo "LC_ALL=zh_CN" >> $GITHUB_ENV
+
       - uses: actions/checkout@v2
 
       # Always try to use the latest pandoc version
