@@ -52,10 +52,10 @@ jobs:
           echo "LC_ALL=en_US" >> $GITHUB_ENV
 
       - name: Set locale
-        if: matrix.config.locale == 'zh_CN'
+        if: matrix.config.locale == 'zh_CN.UTF-8'
         run: |
-          sudo locale-gen zh_CN
-          echo "LC_ALL=zh_CN" >> $GITHUB_ENV
+          sudo locale-gen zh_CN.UTF-8
+          echo "LC_ALL=zh_CN.UTF-8" >> $GITHUB_ENV
 
       - uses: actions/checkout@v2
 
