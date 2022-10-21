@@ -86,15 +86,11 @@ jobs:
       # TODO: Check which of the ignore conditions are still relevant given the
       # current suggested dependencies and the minimum supported R version.
       # Update if anything out of date or not needed anymore.
-      #
-      # `{EGAnet}` needs `{XML}`, and there are currently issues in downloading
-      # it for certain R versions. So just don't install it for now.
       - uses: r-lib/actions/setup-r-dependencies@v2
         with:
           pak-version: devel
           extra-packages: |
             any::rcmdcheck
-            EGAnet=?ignore-before-r=5.0.0
             fastICA=?ignore-before-r=4.0.0
             metafor=?ignore-before-r=4.0.0
             panelr=?ignore-before-r=4.0.0
