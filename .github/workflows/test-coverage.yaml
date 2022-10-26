@@ -22,7 +22,6 @@ jobs:
         with:
           pak-version: devel
           extra-packages: |
-            EGAnet=?ignore-before-r=5.0.0
             r-lib/covr
           needs: coverage
 
