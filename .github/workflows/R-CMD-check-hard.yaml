@@ -36,7 +36,7 @@ jobs:
 
       - uses: r-lib/actions/setup-r-dependencies@v2
         with:
-          pak-version: devel
+          # pak-version: devel
           dependencies: '"hard"'
           cache: false
           extra-packages: |

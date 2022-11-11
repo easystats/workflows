@@ -88,7 +88,7 @@ jobs:
       # Update if anything out of date or not needed anymore.
       - uses: r-lib/actions/setup-r-dependencies@v2
         with:
-          pak-version: devel
+          # pak-version: devel
           extra-packages: |
             any::rcmdcheck
             fastICA=?ignore-before-r=4.0.0
