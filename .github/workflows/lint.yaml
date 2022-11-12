@@ -22,12 +22,9 @@ jobs:
           pak-version: devel
           extra-packages: |
             r-lib/lintr
-            EGAnet=?ignore-before-r=5.0.0
             local::.
           needs: lint
 
-      # TODO: Revisit to remove some of these allowances after more important lints
-      # have been removed.
       - name: Lint
         run: |
           library(lintr)
