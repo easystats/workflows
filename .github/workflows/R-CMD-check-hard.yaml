@@ -44,8 +44,14 @@ jobs:
             any::testthat
             any::knitr
             any::rmarkdown
-          needs: check
+            r-lib/pkgdown
+          needs: |
+            check
+            website
 
       - uses: r-lib/actions/check-r-package@v2
         with:
           upload-snapshots: true
+
+      - name: Build site
+        run: Rscript -e 'pkgdown::build_site_github_pages(new_process = FALSE, install = FALSE)'
