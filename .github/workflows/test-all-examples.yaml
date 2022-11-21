@@ -3,9 +3,9 @@
 #
 # The examples that fail should use
 #  - `if (FALSE) { ... }` (if example is included only for illustrative purposes)
-#  - `try({ ... })` (if the intent is to show the error).
+#  - `try({ ... })` (if the intent is to show the error)
 #
-#  This workflow helps find such examples.
+# This workflow helps find such failing examples that need to be modified.
 
 on:
   workflow_call:
