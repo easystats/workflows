@@ -1,9 +1,9 @@
 # Make sure all examples run successfully, even the ones that are not supposed
 # to be run or tested on CRAN machines by default.
 #
-# The examples with dummy code (or code that is not supposed to work and is
-# included only for illustrative purposes) should wrap such code in
-# `if (FALSE) { ... }`.
+# The examples that fail should use
+#  - `if (FALSE) { ... }` (if example is included only for illustrative purposes)
+#  - `try({ ... })` (if the intent is to show the error).
 #
 #  This workflow helps find such examples.
 
