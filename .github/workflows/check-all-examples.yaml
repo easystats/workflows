@@ -10,10 +10,10 @@
 on:
   workflow_call:
 
-# name: test-all-examples
+# name: check-all-examples
 
 jobs:
-  test-all-examples:
+  check-all-examples:
     runs-on: ubuntu-latest
     env:
       GITHUB_PAT: ${{ secrets.GITHUB_TOKEN }}
