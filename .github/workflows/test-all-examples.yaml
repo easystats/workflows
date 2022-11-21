@@ -1,0 +1,39 @@
+# Make sure all examples run successfully, even the ones that are not supposed
+# to be run or tested on CRAN machines by default.
+#
+# The examples with dummy code (or code that is not supposed to work and is
+# included only for illustrative purposes) should wrap such code in
+# `if (FALSE) { ... }`.
+#
+#  This workflow helps find such examples.
+
+on:
+  workflow_call:
+
+# name: test-all-examples
+
+jobs:
+  test-all-examples:
+    runs-on: ubuntu-latest
+    env:
+      GITHUB_PAT: ${{ secrets.GITHUB_TOKEN }}
+
+    steps:
+      - uses: actions/checkout@v3
+
+      - uses: r-lib/actions/setup-r@v2
+        with:
+          use-public-rspm: true
+
+      - uses: r-lib/actions/setup-r-dependencies@v2
+        with:
+          pak-version: devel
+          extra-packages: |
+            any::devtools
+            local::.
+
+      - name: Run examples
+        run: |
+          options(crayon.enabled = TRUE)
+          devtools::run_examples(fresh = TRUE, run_dontrun = TRUE, run_donttest = TRUE)
+        shell: Rscript {0}
