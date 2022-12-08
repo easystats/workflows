@@ -13,6 +13,7 @@ jobs:
       _R_CHECK_CRAN_INCOMING_: false
       _R_CHECK_FORCE_SUGGESTS_: false
 
+    steps:
       - uses: actions/checkout@v3
 
       # Always try to use the latest pandoc version
@@ -25,7 +26,6 @@ jobs:
         with:
           use-public-rspm: true
 
-      # TODO: Check which of the ignore conditions are still relevant given the
       # current suggested dependencies and the minimum supported R version.
       # Update if anything out of date or not needed anymore.
       - uses: r-lib/actions/setup-r-dependencies@v2
