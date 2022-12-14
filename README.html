@@ -352,13 +352,33 @@ display: none;
 </div>
 
 
-<div id="workflows" class="section level1">
-<h1>workflows</h1>
-<p>GitHub Actions for <code>{easystats}</code> packages</p>
+<div id="easystats-workflows" class="section level1">
+<h1><code>{easystats}</code>-workflows</h1>
+<p>GitHub Actions for <code>{easystats}</code> packages.</p>
+</div>
+<div id="using-in-your-packages" class="section level1">
+<h1>Using in your packages</h1>
+<p>If you wish to copy any of these workflows in your own pages, you can
+do so without asking for any permissions.</p>
+<p>Just keep in mind that you will need to change the following
+lines:</p>
+<pre class="yaml"><code>on:
+  workflow_call:
+  
+#name: test-coverage</code></pre>
+<p>to (e.g.)</p>
+<pre class="yaml"><code>on:
+  push:
+    branches: [main, master]
+  pull_request:
+    branches: [main, master]
+    
+name: test-coverage</code></pre>
 </div>
 <div id="acknowledgments" class="section level1">
 <h1>Acknowledgments</h1>
-<p>These workflows are based on <a href="https://github.com/r-lib/actions">r-lib/actions</a>.</p>
+<p>These workflows are based on <a href="https://github.com/r-lib/actions">r-lib/actions</a>. Huge thanks
+to the creators and maintainers!!</p>
 </div>
 
 
