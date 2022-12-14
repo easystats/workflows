@@ -36,12 +36,12 @@ jobs:
             extraction_operator_linter = NULL,
             implicit_integer_linter = NULL,
             line_length_linter(120),
+            namespace_linter = NULL,
             nonportable_path_linter = NULL,
             object_name_linter = NULL,
             object_length_linter(50),
             object_usage_linter = NULL,
             todo_comment_linter = NULL,
-            undesirable_function_linter = NULL,
             undesirable_operator_linter = NULL,
             unneeded_concatenation_linter(allow_single_expression = FALSE),
             defaults = linters_with_tags(tags = NULL)
