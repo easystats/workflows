@@ -19,6 +19,7 @@ jobs:
         with:
           use-public-rspm: true
 
+      # r-lib/pkgapi is relevant only if you are using it to generate API files
       - uses: r-lib/actions/setup-r-dependencies@v2
         with:
           pak-version: devel
@@ -31,6 +32,7 @@ jobs:
           needs: |
             styler
             roxygen2
+
       - name: Enable styler cache
         run: |
           styler::cache_activate()
