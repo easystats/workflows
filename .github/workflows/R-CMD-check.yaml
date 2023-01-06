@@ -85,6 +85,7 @@ jobs:
             metafor=?ignore-before-r=4.0.0
             panelr=?ignore-before-r=4.0.0
             jtools=?ignore-before-r=4.0.0
+            mmrm=?ignore-before-r=4.0.0
             rsvd=?ignore-before-r=4.0.0
             sparsepca=?ignore-before-r=4.0.0
             FactoMineR=?ignore-before-r=4.1.0
