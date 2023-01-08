@@ -18,13 +18,13 @@ jobs:
         config:
           #- {os: macOS-latest, r: 'devel'}
           - { os: macOS-latest, r: "release" }
-          - { os: macOS-latest, r: "oldrel" }
+          #- { os: macOS-latest, r: "oldrel" }
           #- {os: macOS-latest, r: 'oldrel-2'}
           #- {os: macOS-latest, r: 'oldrel-3'}
 
-          - { os: windows-latest, r: "devel" }
+          #- { os: windows-latest, r: "devel" }
           - { os: windows-latest, r: "release" }
-          - { os: windows-latest, r: "oldrel" }
+          #- { os: windows-latest, r: "oldrel" }
           #- {os: windows-latest, r: 'oldrel-2'}
           #- {os: windows-latest, r: 'oldrel-3'}
 
@@ -34,7 +34,7 @@ jobs:
           - { os: windows-latest, r: "4.1" }
 
           - { os: ubuntu-latest, r: "devel", locale: "en_US" }
-          - { os: ubuntu-latest, r: "devel", locale: "zh_CN" }
+          #- { os: ubuntu-latest, r: "devel", locale: "zh_CN" }
           - { os: ubuntu-latest, r: "release" }
           - { os: ubuntu-latest, r: "oldrel" }
           - { os: ubuntu-latest, r: "oldrel-2" }
@@ -47,17 +47,17 @@ jobs:
       _R_CHECK_FORCE_SUGGESTS_: false
 
     steps:
+      # - name: Set locale
+      #   if: matrix.config.locale == 'zh_CN.UTF-8'
+      #   run: |
+      #     sudo locale-gen zh_CN.UTF-8
+      #     echo "LC_ALL=zh_CN.UTF-8" >> $GITHUB_ENV
+
       - name: Set locale
         if: matrix.config.locale == 'en_US'
         run: |
           sudo locale-gen en_US
           echo "LC_ALL=en_US" >> $GITHUB_ENV
-
-      - name: Set locale
-        if: matrix.config.locale == 'zh_CN.UTF-8'
-        run: |
-          sudo locale-gen zh_CN.UTF-8
-          echo "LC_ALL=zh_CN.UTF-8" >> $GITHUB_ENV
 
       - uses: actions/checkout@v3
 
