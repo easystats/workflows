@@ -97,6 +97,11 @@ jobs:
             MuMIn=?ignore-before-r=4.2.0
           needs: check
 
+      - name: Install packages from source
+        run: |
+          install.packages(c("Matrix", "TMB"), type = "source")
+        shell: Rscript {0}
+
       # Don't error on "note" because if any of the suggested packages are not available
       # for a given R version, this generates a NOTE causing unnecessary build failure
       - uses: r-lib/actions/check-r-package@v2
