@@ -73,6 +73,11 @@ jobs:
           http-user-agent: ${{ matrix.config.http-user-agent }}
           use-public-rspm: true
 
+      - name: Install packages from source
+        run: |
+          install.packages(c("Matrix", "TMB"), type = "source")
+        shell: Rscript {0}
+
       # TODO: Check which of the ignore conditions are still relevant given the
       # current suggested dependencies and the minimum supported R version.
       # Update if anything out of date or not needed anymore.
@@ -81,6 +86,8 @@ jobs:
           pak-version: devel
           extra-packages: |
             any::rcmdcheck
+            TMB=?ignore-before-r=100.0.0
+            Matrix=?ignore-before-r=100.0.0
             fastICA=?ignore-before-r=4.0.0
             metafor=?ignore-before-r=4.0.0
             panelr=?ignore-before-r=4.0.0
@@ -96,11 +103,6 @@ jobs:
             randomForest=?ignore-before-r=4.1.0
             MuMIn=?ignore-before-r=4.2.0
           needs: check
-
-      - name: Install packages from source
-        run: |
-          install.packages(c("Matrix", "TMB"), type = "source")
-        shell: Rscript {0}
 
       # Don't error on "note" because if any of the suggested packages are not available
       # for a given R version, this generates a NOTE causing unnecessary build failure
