@@ -26,10 +26,17 @@ jobs:
           r-version: "devel"
           use-public-rspm: true
 
+      - name: Install packages from source
+        run: |
+          install.packages(c("Matrix", "TMB"), type = "source")
+        shell: Rscript {0}
+
       - uses: r-lib/actions/setup-r-dependencies@v2
         with:
           pak-version: devel
           extra-packages: |
+            TMB=?ignore-before-r=100.0.0
+            Matrix=?ignore-before-r=100.0.0
             any::devtools
             local::.
 
