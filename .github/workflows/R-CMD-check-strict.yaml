@@ -42,6 +42,11 @@ jobs:
           use-public-rspm: true
           update-rtools: true
 
+      - name: Install packages from source
+        run: |
+          install.packages(c("Matrix", "TMB"), type = "source")
+        shell: Rscript {0}
+
       - uses: r-lib/actions/setup-r-dependencies@v2
         with:
           pak-version: devel
