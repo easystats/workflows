@@ -51,8 +51,8 @@ jobs:
           extra-packages: |
             any::rcmdcheck
             any::V8
-            TMB=?ignore-before-r=100.0.0
-            Matrix=?ignore-before-r=100.0.0
+            TMB=?ignore
+            Matrix=?ignore
 
       - uses: r-lib/actions/check-r-package@v2
         with:
