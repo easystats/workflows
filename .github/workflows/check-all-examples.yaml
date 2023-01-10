@@ -35,8 +35,8 @@ jobs:
         with:
           pak-version: devel
           extra-packages: |
-            TMB=?ignore
-            Matrix=?ignore
+            TMB=?ignore-before-r=100.0.0
+            Matrix=?ignore-before-r=100.0.0
             any::devtools
             local::.
 
