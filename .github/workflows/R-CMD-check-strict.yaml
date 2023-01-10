@@ -40,6 +40,7 @@ jobs:
           r-version: ${{ matrix.config.r }}
           http-user-agent: "release"
           use-public-rspm: true
+          update-rtools: true
 
       - uses: r-lib/actions/setup-r-dependencies@v2
         with:
@@ -50,5 +51,6 @@ jobs:
 
       - uses: r-lib/actions/check-r-package@v2
         with:
+          upload-results: true
           upload-snapshots: true
           error-on: '"note"'
