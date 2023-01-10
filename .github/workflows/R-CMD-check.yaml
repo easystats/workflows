@@ -16,6 +16,9 @@ jobs:
       fail-fast: false
       matrix:
         config:
+          # Checks are not run on R-devel because they are already run in
+          # `R-CMD-check-strict` workflow
+
           #- {os: macOS-latest, r: 'devel'}
           - { os: macOS-latest, r: "release" }
           #- { os: macOS-latest, r: "oldrel" }
@@ -33,7 +36,7 @@ jobs:
           # use 4.1 to check with rtools40's older compiler
           #- { os: windows-latest, r: "4.1" }
 
-          - { os: ubuntu-latest, r: "devel", locale: "en_US" }
+          #- { os: ubuntu-latest, r: "devel", locale: "en_US" }
           #- { os: ubuntu-latest, r: "devel", locale: "zh_CN" }
           - { os: ubuntu-latest, r: "release" }
           - { os: ubuntu-latest, r: "oldrel" }
