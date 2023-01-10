@@ -1,13 +1,19 @@
+#name: revdepcheck
+
 on:
   workflow_call:
 
-#name: revdepcheck
+concurrency:
+  group: ${{ github.workflow }}-${{ github.head_ref }}
+  cancel-in-progress: true
 
 jobs:
   revdepcheck:
     runs-on: ubuntu-latest
     env:
       GITHUB_PAT: ${{ secrets.GITHUB_TOKEN }}
+
+    if: startsWith(github.head_ref, 'rc')
 
     steps:
       - uses: actions/checkout@v3
