@@ -53,6 +53,7 @@ jobs:
           needs: check
           extra-packages: |
             any::rcmdcheck
+            any::BH
 
       - uses: r-lib/actions/check-r-package@v2
         with:
