@@ -34,7 +34,7 @@ jobs:
       - name: Build site
         run: |
           options(crayon.enabled = TRUE)
-          pkgdown::build_site_github_pages(new_process = FALSE, install = FALSE)
+          pkgdown::build_site_github_pages(run_dont_run = TRUE)
         shell: Rscript {0}
 
       - name: Deploy to GitHub pages 🚀
