@@ -56,6 +56,6 @@ jobs:
 
       - name: Render README
         run: |
-          options(crayon.enabled = TRUE)
+          options(crayon.enabled = TRUE, warn = 2L)
           rmarkdown::render("README.Rmd")
         shell: Rscript {0}
