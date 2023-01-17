@@ -92,6 +92,7 @@ jobs:
             any::BH
             TMB=?ignore-before-r=100.0.0
             Matrix=?ignore-before-r=100.0.0
+            gdtools=?ignore-before-r=4.0.0
             fastICA=?ignore-before-r=4.0.0
             metafor=?ignore-before-r=4.0.0
             panelr=?ignore-before-r=4.0.0
