@@ -4,10 +4,11 @@ Version: 0.1.0
 Authors@R: 
     person("Indrajeet", "Patil", , "patilindrajeet.science@gmail.com", role = c("aut", "cre"))
 Description: This is a template package used as a container for storing 'easystats' workflows.
-License: MIT + file LICENSE
+License: GPL3 + file LICENSE
 URL: https://github.com/easystats/workflows
 BugReports: https://github.com/easystats/workflows/issues
 LazyData: false
+License: CC0 1.0 Universal
 Encoding: UTF-8
 Roxygen: list(markdown = TRUE)
 RoxygenNote: 7.2.2
