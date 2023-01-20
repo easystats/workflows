@@ -56,3 +56,7 @@ name: test-coverage
 # Acknowledgments
 
 These workflows are based on [r-lib/actions](https://github.com/r-lib/actions). Huge thanks to the creators, maintainers, and contributors to that repo!!
+
+## License ![CC0 licensed](https://img.shields.io/github/license/r-lib/actions)
+
+All examples in this repository are published with the [CC0](./LICENSE) license.
