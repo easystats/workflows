@@ -2,7 +2,32 @@
 
 GitHub Actions for `{easystats}` packages. 
 
-# Using in your packages
+# Using workflows in your packages
+
+## Reusing workflows
+
+You don't need to copy these workflows if you are happy as they are. In this case,
+you can just reuse the workflow. 
+
+For example, if you wanted to use `check-spelling` workflow, your workflow 
+(in the file `.github/workflows/check-spelling.yaml`) would look like so:
+
+
+```yaml
+on:
+  push:
+    branches: [main, master]
+  pull_request:
+    branches: [main, master]
+
+name: check-spelling
+
+jobs:
+  check-spelling:
+    uses: easystats/workflows/.github/workflows/check-spelling.yaml@main
+```
+
+## Copying workflows
 
 If you wish to copy any of these workflows in your own pages, you can do so 
 without asking for any permissions.
@@ -30,4 +55,4 @@ name: test-coverage
 
 # Acknowledgments
 
-These workflows are based on [r-lib/actions](https://github.com/r-lib/actions). Huge thanks to the creators and maintainers!!
+These workflows are based on [r-lib/actions](https://github.com/r-lib/actions). Huge thanks to the creators, maintainers, and contributors to that repo!!
