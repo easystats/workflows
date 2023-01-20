@@ -15,9 +15,5 @@ LaTeX: XeLaTeX
 AutoAppendNewline: Yes
 StripTrailingWhitespace: Yes
 
-BuildType: Package
-PackageUseDevtools: Yes
-PackageInstallArgs: --no-multiarch --with-keep.source
-
 QuitChildProcessesOnExit: Yes
 DisableExecuteRprofile: Yes
