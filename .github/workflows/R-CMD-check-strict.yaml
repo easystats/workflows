@@ -45,6 +45,9 @@ jobs:
           install.packages(c("Matrix", "TMB"), type = "source")
         shell: Rscript {0}
 
+      # TODO: Check which of the ignore conditions are still relevant given the
+      # current suggested dependencies and the minimum supported R version.
+      # Update if anything out of date or not needed anymore.
       - uses: r-lib/actions/setup-r-dependencies@v2
         with:
           pak-version: devel
@@ -67,12 +70,16 @@ jobs:
             FactoMineR=?ignore-before-r=4.1.0
             factoextra=?ignore-before-r=4.1.0
             emmeans=?ignore-before-r=4.1.0
-            afex=?ignore-before-r=4.1.0
-            pbkrtest=?ignore-before-r=4.1.0
             rmcorr=?ignore-before-r=4.1.0
             randomForest=?ignore-before-r=4.1.0
             MuMIn=?ignore-before-r=4.2.0
+            pbkrtest=?ignore-before-r=4.1.0 
+            afex=?ignore-before-r=4.1.0
+            car=?ignore-before-r=4.1.0 
+            ivreg=?ignore-before-r=4.1.0 
+            AER=?ignore-before-r=4.1.0 
           needs: check
+      
 
       # install *after* other deps to avoid FreeADFunObject error
       - name: Install glmmTMB from source
