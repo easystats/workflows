@@ -42,6 +42,7 @@ jobs:
             easystats/effectsize
             easystats/correlation
             easystats/modelbased
+            epiR=?ignore-before-r=4.0.0
             fastICA=?ignore-before-r=4.0.0
             metafor=?ignore-before-r=4.0.0
             panelr=?ignore-before-r=4.0.0
