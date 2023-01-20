@@ -34,6 +34,7 @@ jobs:
           extra-packages: |
             local::.
             any::rcmdcheck
+            any::BH
             easystats/insight
             easystats/datawizard
             easystats/parameters
@@ -42,7 +43,12 @@ jobs:
             easystats/effectsize
             easystats/correlation
             easystats/modelbased
+            TMB=?ignore-before-r=100.0.0
+            Matrix=?ignore-before-r=100.0.0
+            glmmTMB=?ignore-before-r=100.0.0
             epiR=?ignore-before-r=4.0.0
+            gam=?ignore-before-r=4.0.0
+            gdtools=?ignore-before-r=4.0.0
             fastICA=?ignore-before-r=4.0.0
             metafor=?ignore-before-r=4.0.0
             panelr=?ignore-before-r=4.0.0
@@ -52,6 +58,7 @@ jobs:
             FactoMineR=?ignore-before-r=4.1.0
             factoextra=?ignore-before-r=4.1.0
             emmeans=?ignore-before-r=4.1.0
+            pbkrtest=?ignore-before-r=4.1.0
             rmcorr=?ignore-before-r=4.1.0
             randomForest=?ignore-before-r=4.1.0
             MuMIn=?ignore-before-r=4.2.0

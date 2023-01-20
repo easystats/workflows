@@ -94,6 +94,7 @@ jobs:
             Matrix=?ignore-before-r=100.0.0
             glmmTMB=?ignore-before-r=100.0.0
             epiR=?ignore-before-r=4.0.0
+            gam=?ignore-before-r=4.0.0
             gdtools=?ignore-before-r=4.0.0
             fastICA=?ignore-before-r=4.0.0
             metafor=?ignore-before-r=4.0.0
@@ -105,14 +106,14 @@ jobs:
             FactoMineR=?ignore-before-r=4.1.0
             factoextra=?ignore-before-r=4.1.0
             emmeans=?ignore-before-r=4.1.0
-            gam=?ignore-before-r=4.0.0
+            pbkrtest=?ignore-before-r=4.1.0
             rmcorr=?ignore-before-r=4.1.0
             randomForest=?ignore-before-r=4.1.0
             MuMIn=?ignore-before-r=4.2.0
           needs: check
 
       # install *after* other deps to avoid FreeADFunObject error
-      - name: Install packages from source
+      - name: Install glmmTMB from source
         run: |
           install.packages("glmmTMB", type = "source")
         shell: Rscript {0}
