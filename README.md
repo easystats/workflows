@@ -2,6 +2,10 @@
 
 GitHub Actions for `{easystats}` packages. 
 
+To know more about how to build automation infrastructure to improve user experience and development workflow of R packages using these workflows, have a look at these slides:
+
+<https://indrajeetpatil.github.io/preventive-r-package-care>
+
 # Using workflows in your packages
 
 ## Reusing workflows
