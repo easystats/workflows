@@ -69,6 +69,9 @@ jobs:
             sparsepca=?ignore-before-r=4.0.0
             car=?ignore-before-r=4.1.0
             drc=?ignore-before-r=4.1.0
+            EGAnet=?ignore-before-r=4.1.0
+            ggpubr=?ignore-before-r=4.1.0
+            rstatix=?ignore-before-r=4.1.0
             PROreg=?ignore-before-r=4.1.0
             FactoMineR=?ignore-before-r=4.1.0
             factoextra=?ignore-before-r=4.1.0
