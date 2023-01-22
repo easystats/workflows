@@ -16,8 +16,12 @@ jobs:
       fail-fast: false
       matrix:
         config:
-          # Checks are not run on R-devel because they are already run in
-          # `R-CMD-check-strict` workflow
+          ##~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+          ##                              IMPORTANT                                   ##
+          ##                                                                          ##
+          ##             Checks are deliberately not run on R-devel.                  ##
+          ##  This is because they are already run in `R-CMD-check-strict` workflow.  ##
+          ##~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
           #- {os: macOS-latest, r: 'devel'}
           - { os: macOS-latest, r: "release" }
@@ -64,8 +68,6 @@ jobs:
 
       - uses: actions/checkout@v3
 
-      # Always try to use the latest pandoc version
-      # https://github.com/jgm/pandoc/releases
       - uses: r-lib/actions/setup-pandoc@v2
         with:
           pandoc-version: "3.0"
@@ -73,7 +75,7 @@ jobs:
       - uses: r-lib/actions/setup-r@v2
         with:
           r-version: ${{ matrix.config.r }}
-          http-user-agent: ${{ matrix.config.http-user-agent }}
+          http-user-agent: "release"
           use-public-rspm: true
 
       - name: Install packages from source
