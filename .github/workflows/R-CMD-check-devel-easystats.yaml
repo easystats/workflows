@@ -57,6 +57,9 @@ jobs:
             jtools=?ignore-before-r=4.0.0
             rsvd=?ignore-before-r=4.0.0
             sparsepca=?ignore-before-r=4.0.0
+            car=?ignore-before-r=4.1.0
+            drc=?ignore-before-r=4.1.0
+            PROreg=?ignore-before-r=4.1.0
             FactoMineR=?ignore-before-r=4.1.0
             factoextra=?ignore-before-r=4.1.0
             emmeans=?ignore-before-r=4.1.0
