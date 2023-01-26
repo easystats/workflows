@@ -64,10 +64,10 @@ jobs:
           needs: check
 
       # install *after* other deps to avoid FreeADFunObject error
-      #- name: Install glmmTMB from source
-      #  run: |
-      #    install.packages("glmmTMB", type = "source")
-      #  shell: Rscript {0}
+      - name: Install glmmTMB from source
+        run: |
+          install.packages("glmmTMB", type = "source")
+        shell: Rscript {0}
 
       - uses: r-lib/actions/check-r-package@v2
         with:
