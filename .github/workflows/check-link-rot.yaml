@@ -1,7 +1,11 @@
+# name: check-link-rot
+
 on:
   workflow_call:
 
-# name: check-link-rot
+concurrency:
+  group: ${{ github.workflow }}-${{ github.head_ref }}
+  cancel-in-progress: true
 
 jobs:
   check-link-rot:

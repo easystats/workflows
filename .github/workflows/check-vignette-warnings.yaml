@@ -1,8 +1,13 @@
 # Run vignettes with `options(warn = 2)` to fail on warnings
+
+#name: check-vignette-warnings
+
 on:
   workflow_call:
 
-#name: check-vignette-warnings
+concurrency:
+  group: ${{ github.workflow }}-${{ github.head_ref }}
+  cancel-in-progress: true
 
 jobs:
   check-vignette-warnings:

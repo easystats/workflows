@@ -4,10 +4,14 @@
 #  NOTE: The {pkgdown} workflow in "noSuggests" mode makes sure that the vignettes or
 # examples evaluated only on the website are also using soft dependencies conditionally.
 
+# name: pkgdown-no-suggests
+
 on:
   workflow_call:
 
-# name: pkgdown-no-suggests
+concurrency:
+  group: ${{ github.workflow }}-${{ github.head_ref }}
+  cancel-in-progress: true
 
 jobs:
   pkgdown-no-suggests:

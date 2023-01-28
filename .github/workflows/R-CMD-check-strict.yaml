@@ -3,10 +3,14 @@
 #
 # R CMD Check will fail on NOTE.
 
+# name: R-CMD-check-strict
+
 on:
   workflow_call:
 
-# name: R-CMD-check-strict
+concurrency:
+  group: ${{ github.workflow }}-${{ github.head_ref }}
+  cancel-in-progress: true
 
 jobs:
   R-CMD-check-strict:

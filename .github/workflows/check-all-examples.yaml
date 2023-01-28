@@ -7,10 +7,14 @@
 #
 # This workflow helps find such failing examples that need to be modified.
 
+# name: check-all-examples
+
 on:
   workflow_call:
 
-# name: check-all-examples
+concurrency:
+  group: ${{ github.workflow }}-${{ github.head_ref }}
+  cancel-in-progress: true
 
 jobs:
   check-all-examples:
