@@ -28,6 +28,7 @@ jobs:
           dependencies: '"hard"'
           extra-packages: |
             any::rcmdcheck
+            any::rlang
             any::spelling
 
       - name: Spell check
