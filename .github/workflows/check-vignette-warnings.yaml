@@ -45,5 +45,5 @@ jobs:
         run: |
           options(crayon.enabled = TRUE, warn = 2L)
           vignettes <- fs::dir_ls("vignettes/", glob = "*.Rmd", recurse = TRUE)
-          purrr::walk(vignettes, rmarkdown::render)
+          purrr::walk(vignettes, ~rmarkdown::render(.x))
         shell: Rscript {0}
