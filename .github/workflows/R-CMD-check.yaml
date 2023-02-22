@@ -111,6 +111,7 @@ jobs:
             sparsepca=?ignore-before-r=4.0.0
             qqconf=?ignore-before-r=4.0.0
             qqplotr=?ignore-before-r=4.0.0
+            ape=?ignore-before-r=4.1.0
             car=?ignore-before-r=4.1.0
             drc=?ignore-before-r=4.1.0
             EGAnet=?ignore-before-r=4.1.0
