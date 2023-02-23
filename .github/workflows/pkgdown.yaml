@@ -24,13 +24,27 @@ jobs:
         with:
           use-public-rspm: true
 
+      - name: Install packages from source
+        run: |
+          install.packages(c("Matrix", "TMB"), type = "source")
+        shell: Rscript {0}
+
       - uses: r-lib/actions/setup-r-dependencies@v2
         with:
           pak-version: devel
           extra-packages: |
+            TMB=?ignore-before-r=100.0.0
+            Matrix=?ignore-before-r=100.0.0
+            glmmTMB=?ignore-before-r=100.0.0
             r-lib/pkgdown
             local::.
           needs: website
+
+      # install *after* other deps to avoid FreeADFunObject error
+      - name: Install glmmTMB from source
+        run: |
+          install.packages("glmmTMB", type = "source")
+        shell: Rscript {0}
 
       - name: Build site
         run: |
