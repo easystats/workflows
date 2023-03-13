@@ -3,62 +3,62 @@
 
 #name: check-readme
 
-on:
-  workflow_call:
+# on:
+#   workflow_call:
 
-concurrency:
-  group: ${{ github.workflow }}-${{ github.head_ref }}
-  cancel-in-progress: true
+# concurrency:
+#   group: ${{ github.workflow }}-${{ github.head_ref }}
+#   cancel-in-progress: true
 
-jobs:
-  check-readme:
-    runs-on: ${{ matrix.config.os }}
+# jobs:
+#   check-readme:
+#     runs-on: ${{ matrix.config.os }}
 
-    name: ${{ matrix.config.os }} (${{ matrix.config.r }})
+#     name: ${{ matrix.config.os }} (${{ matrix.config.r }})
 
-    strategy:
-      fail-fast: false
-      matrix:
-        config:
-          - { os: ubuntu-latest, r: "release" }
-          #- { os: ubuntu-latest, r: "devel" }
+#     strategy:
+#       fail-fast: false
+#       matrix:
+#         config:
+#           - { os: ubuntu-latest, r: "release" }
+#           #- { os: ubuntu-latest, r: "devel" }
 
-    env:
-      GITHUB_PAT: ${{ secrets.GITHUB_TOKEN }}
+#     env:
+#       GITHUB_PAT: ${{ secrets.GITHUB_TOKEN }}
 
-    steps:
-      - uses: actions/checkout@v3
+#     steps:
+#       - uses: actions/checkout@v3
 
-      - uses: r-lib/actions/setup-pandoc@v2
-        with:
-          pandoc-version: "3.1.1"
+#       - uses: r-lib/actions/setup-pandoc@v2
+#         with:
+#           pandoc-version: "3.1.1"
 
-      - uses: r-lib/actions/setup-r@v2
-        with:
-          r-version: ${{ matrix.config.r }}
-          http-user-agent: "release"
-          use-public-rspm: true
+#       - uses: r-lib/actions/setup-r@v2
+#         with:
+#           r-version: ${{ matrix.config.r }}
+#           http-user-agent: "release"
+#           use-public-rspm: true
 
-      - uses: r-lib/actions/setup-r-dependencies@v2
-        with:
-          #cache-version: 2
-          pak-version: devel
-          extra-packages: |
-            local::.
-            easystats/insight
-            easystats/datawizard
-            easystats/parameters
-            easystats/performance
-            easystats/bayestestR
-            easystats/effectsize
-            easystats/correlation
-            easystats/report
-            easystats/see
-            easystats/modelbased
-            easystats/easystats
+#       - uses: r-lib/actions/setup-r-dependencies@v2
+#         with:
+#           #cache-version: 2
+#           pak-version: devel
+#           extra-packages: |
+#             local::.
+#             easystats/insight
+#             easystats/datawizard
+#             easystats/parameters
+#             easystats/performance
+#             easystats/bayestestR
+#             easystats/effectsize
+#             easystats/correlation
+#             easystats/report
+#             easystats/see
+#             easystats/modelbased
+#             easystats/easystats
 
-      - name: Render README
-        run: |
-          options(crayon.enabled = TRUE, warn = 2L)
-          rmarkdown::render("README.Rmd")
-        shell: Rscript {0}
+#       - name: Render README
+#         run: |
+#           options(crayon.enabled = TRUE, warn = 2L)
+#           rmarkdown::render("README.Rmd")
+#         shell: Rscript {0}
