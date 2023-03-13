@@ -48,8 +48,12 @@ jobs:
           #- { os: ubuntu-latest, r: "devel", locale: "zh_CN" }
           - { os: ubuntu-latest, r: "release" }
           - { os: ubuntu-latest, r: "oldrel" }
-          - { os: ubuntu-latest, r: "oldrel-2" }
-          - { os: ubuntu-latest, r: "oldrel-3" }
+          
+          ## For now, we disable these tests until
+          ## https://github.com/easystats/workflows/issues/30
+          ## is resolved.
+          #- { os: ubuntu-latest, r: "oldrel-2" }
+          #- { os: ubuntu-latest, r: "oldrel-3" }
 
     env:
       GITHUB_PAT: ${{ secrets.GITHUB_TOKEN }}
