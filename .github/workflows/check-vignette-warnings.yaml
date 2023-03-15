@@ -39,6 +39,7 @@ jobs:
           extra-packages: |
             TMB=?ignore-before-r=100.0.0
             Matrix=?ignore-before-r=100.0.0
+            any::purrr
             local::.
 
       - name: Build vignettes
