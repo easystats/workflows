@@ -46,7 +46,7 @@ jobs:
 
       - name: Install packages from source
         run: |
-          install.packages(c("mmrm", "Matrix", "TMB"), type = "source")
+          install.packages(c("Matrix", "TMB"), type = "source")
         shell: Rscript {0}
 
       ##~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -69,9 +69,9 @@ jobs:
           needs: check
 
       # install *after* other deps to avoid FreeADFunObject error
-      - name: Install glmmTMB from source
+      - name: Install mmrm and glmmTMB from source
         run: |
-          install.packages("glmmTMB", type = "source")
+          install.packages(c("mmrm", "glmmTMB"), type = "source")
         shell: Rscript {0}
 
       - uses: r-lib/actions/check-r-package@v2

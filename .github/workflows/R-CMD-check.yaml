@@ -25,6 +25,7 @@ jobs:
           ##                                                                          ##
           ##             Checks are deliberately not run on R-devel.                  ##
           ##  This is because they are already run in `R-CMD-check-strict` workflow.  ##
+          ##  Other commented workflows don't add extra value and are an overkill.    ##
           ##~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
           #- {os: macOS-latest, r: 'devel'}
