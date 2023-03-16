@@ -22,7 +22,7 @@ jobs:
       matrix:
         config:
           # CRAN does not provide macOS binaries for R-devel, so some packages
-          # need to be built from source. To avoid that, use R-release.
+          # need to be built from source. To avoid that, use R-release on macOS.
           - { os: macos-latest, r: "release" }
           - { os: windows-latest, r: "devel" }
           - { os: ubuntu-latest, r: "devel" }
@@ -57,7 +57,7 @@ jobs:
       ##~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
       - uses: r-lib/actions/setup-r-dependencies@v2
         with:
-          cache-version: 2
+          #cache-version: 2
           pak-version: devel
           extra-packages: |
             any::rcmdcheck
