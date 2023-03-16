@@ -46,7 +46,7 @@ jobs:
 
       - name: Install packages from source
         run: |
-          install.packages(c("Matrix", "TMB"), type = "source")
+          install.packages(c("mmrm", "Matrix", "TMB"), type = "source")
         shell: Rscript {0}
 
       ##~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -62,6 +62,7 @@ jobs:
           extra-packages: |
             any::rcmdcheck
             any::BH
+            mmrm=?ignore-before-r=100.0.0
             TMB=?ignore-before-r=100.0.0
             Matrix=?ignore-before-r=100.0.0
             glmmTMB=?ignore-before-r=100.0.0
