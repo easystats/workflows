@@ -105,6 +105,8 @@ jobs:
             gdtools=?ignore-before-r=4.0.0
             fastICA=?ignore-before-r=4.0.0
             metafor=?ignore-before-r=4.0.0
+            metaplus=?ignore-before-r=4.0.0
+            multgee=?ignore-before-r=4.0.0
             panelr=?ignore-before-r=4.0.0
             jtools=?ignore-before-r=4.0.0
             mmrm=?ignore-before-r=4.0.0
