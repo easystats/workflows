@@ -101,8 +101,10 @@ jobs:
             Matrix=?ignore-before-r=100.0.0
             glmmTMB=?ignore-before-r=100.0.0
             epiR=?ignore-before-r=4.0.0
+            energy=?ignore-before-r=4.0.0
             gam=?ignore-before-r=4.0.0
             gdtools=?ignore-before-r=4.0.0
+            gsl=?ignore-before-r=4.0.0
             fastICA=?ignore-before-r=4.0.0
             metafor=?ignore-before-r=4.0.0
             metaplus=?ignore-before-r=4.0.0
@@ -114,6 +116,7 @@ jobs:
             sparsepca=?ignore-before-r=4.0.0
             qqconf=?ignore-before-r=4.0.0
             qqplotr=?ignore-before-r=4.0.0
+            rtdists=?ignore-before-r=4.0.0
             VGAM=?ignore-before-r=4.0.0
             ape=?ignore-before-r=4.1.0
             car=?ignore-before-r=4.1.0
