@@ -33,7 +33,7 @@ jobs:
         with:
           pak-version: devel
           extra-packages: |
-            r-lib/covr
+           any::covr
           needs: coverage
 
       - name: Test coverage
