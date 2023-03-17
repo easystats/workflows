@@ -55,7 +55,6 @@ jobs:
             easystats/report
             easystats/see
             easystats/modelbased
-            easystats/easystats
 
       - name: Render README
         run: |
