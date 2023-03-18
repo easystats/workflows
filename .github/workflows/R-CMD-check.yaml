@@ -97,6 +97,7 @@ jobs:
           extra-packages: |
             any::rcmdcheck
             any::BH
+            mmrm=?ignore-before-r=100.0.0
             TMB=?ignore-before-r=100.0.0
             Matrix=?ignore-before-r=100.0.0
             glmmTMB=?ignore-before-r=100.0.0

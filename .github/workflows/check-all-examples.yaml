@@ -38,12 +38,19 @@ jobs:
       - uses: r-lib/actions/setup-r-dependencies@v2
         with:
           #cache-version: 2
-          pak-version: devel
           extra-packages: |
+            mmrm=?ignore-before-r=100.0.0
             TMB=?ignore-before-r=100.0.0
             Matrix=?ignore-before-r=100.0.0
             any::devtools
             local::.
+          pak-version: devel
+
+      # install *after* other deps to avoid FreeADFunObject error
+      - name: Install mmrm and glmmTMB from source
+        run: |
+          install.packages(c("mmrm", "glmmTMB"), type = "source")
+        shell: Rscript {0}
 
       - name: Run examples
         run: |
