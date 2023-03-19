@@ -29,12 +29,6 @@ jobs:
           install.packages(c("Matrix", "TMB"), type = "source")
         shell: Rscript {0}
 
-      ##~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-      ##                              IMPORTANT                                       ##
-      ##                                                                              ##
-      ##             Strict checks are run only on R-release and R-devel.             ##
-      ##  No deps are ignored since all deps ought to be available on these versions  ##
-      ##~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
       - uses: r-lib/actions/setup-r-dependencies@v2
         with:
           #cache-version: 2
@@ -51,15 +45,16 @@ jobs:
             easystats/effectsize
             easystats/correlation
             easystats/modelbased
+            mmrm=?ignore-before-r=100.0.0
             TMB=?ignore-before-r=100.0.0
             Matrix=?ignore-before-r=100.0.0
             glmmTMB=?ignore-before-r=100.0.0
           needs: check
 
       # install *after* other deps to avoid FreeADFunObject error
-      - name: Install glmmTMB from source
+      - name: Install mmrm and glmmTMB from source
         run: |
-          install.packages("glmmTMB", type = "source")
+          install.packages(c("mmrm", "glmmTMB"), type = "source")
         shell: Rscript {0}
 
       - uses: r-lib/actions/check-r-package@v2
