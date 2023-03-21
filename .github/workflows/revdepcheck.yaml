@@ -24,12 +24,29 @@ jobs:
 
       - uses: r-lib/actions/setup-r@v2
 
+      - name: Install packages from source
+        run: |
+          install.packages(c("Matrix", "TMB"), type = "source")
+        shell: Rscript {0}
+
       - uses: r-lib/actions/setup-r-dependencies@v2
         with:
-          pak-version: devel
           extra-packages: |
             r-lib/revdepcheck
             local::.
+            any::rcmdcheck
+            any::BH
+            mmrm=?ignore-before-r=100.0.0
+            TMB=?ignore-before-r=100.0.0
+            Matrix=?ignore-before-r=100.0.0
+            glmmTMB=?ignore-before-r=100.0.0
+          pak-version: devel
+
+      # install *after* other deps to avoid FreeADFunObject error
+      - name: Install mmrm and glmmTMB from source
+        run: |
+          install.packages(c("mmrm", "glmmTMB"), type = "source")
+        shell: Rscript {0}
 
       - name: Revdepcheck
         run: |
