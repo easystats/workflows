@@ -23,6 +23,7 @@ jobs:
           pak-version: devel
           extra-packages: |
             local::.
+            any::purrr
 
       - name: Run Tests in Random Order
         run: |
