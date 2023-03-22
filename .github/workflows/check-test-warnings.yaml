@@ -48,8 +48,5 @@ jobs:
       - name: Run Tests
         run: |
           options(crayon.enabled = TRUE, warn = 2L)
-          if (Sys.getenv("_R_CHECK_FORCE_SUGGESTS_", "") == "") {
-            Sys.setenv("_R_CHECK_FORCE_SUGGESTS_" = "false")
-          }
           testthat::test_dir("tests")
         shell: Rscript {0}
