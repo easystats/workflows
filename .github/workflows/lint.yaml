@@ -36,7 +36,6 @@ jobs:
           library(lintr)
           lint_package(linters = linters_with_defaults(
             absolute_path_linter = NULL,
-            commented_code_linter = NULL,
             cyclocomp_linter(40L),
             extraction_operator_linter = NULL,
             implicit_integer_linter = NULL,
