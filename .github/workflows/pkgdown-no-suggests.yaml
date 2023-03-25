@@ -1,8 +1,5 @@
-# Workflow derived from https://github.com/r-lib/actions/tree/v2/examples
-# Need help debugging build failures? Start at https://github.com/r-lib/actions#where-to-find-help
-#
-#  NOTE: The {pkgdown} workflow in "noSuggests" mode makes sure that the vignettes or
-# examples evaluated only on the website are also using soft dependencies conditionally.
+# To understand the aim and scope of this workflow, have a look at these slides:
+# https://indrajeetpatil.github.io/preventive-r-package-care/
 
 # name: pkgdown-no-suggests
 

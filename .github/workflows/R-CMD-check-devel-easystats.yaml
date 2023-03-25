@@ -1,7 +1,10 @@
+# To understand the aim and scope of this workflow, have a look at these slides:
+# https://indrajeetpatil.github.io/preventive-r-package-care/
+
+# name: R-CMD-check-devel-easystats
+
 on:
   workflow_call:
-
-#name: R-CMD-check-devel-easystats
 
 jobs:
   R-CMD-check-devel-easystats:

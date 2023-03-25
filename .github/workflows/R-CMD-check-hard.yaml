@@ -1,11 +1,5 @@
-# Workflow derived from https://github.com/r-lib/actions/tree/v2/examples
-# Need help debugging build failures? Start at https://github.com/r-lib/actions#where-to-find-help
-#
-# NOTE: This workflow only directly installs "hard" dependencies, i.e. Depends,
-# Imports, and LinkingTo dependencies. Notably, Suggests dependencies are never
-# installed, with the exception of testthat, knitr, and rmarkdown. The cache is
-# never used to avoid accidentally restoring a cache containing a suggested
-# dependency.
+# To understand the aim and scope of this workflow, have a look at these slides:
+# https://indrajeetpatil.github.io/preventive-r-package-care/
 
 # name: R-CMD-check-hard
 

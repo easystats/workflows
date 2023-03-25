@@ -1,6 +1,7 @@
-# Run vignettes with `options(warn = 2)` to fail on warnings
+# To understand the aim and scope of this workflow, have a look at these slides:
+# https://indrajeetpatil.github.io/preventive-r-package-care/
 
-#name: check-vignette-warnings
+# name: check-vignette-warnings
 
 on:
   workflow_call:

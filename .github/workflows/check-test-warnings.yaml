@@ -1,6 +1,7 @@
-# running testthat with options(warn = 2) to fail on test warnings
+# To understand the aim and scope of this workflow, have a look at these slides:
+# https://indrajeetpatil.github.io/preventive-r-package-care/
 
-#name: check-test-warnings
+# name: check-test-warnings
 
 on:
   workflow_call:

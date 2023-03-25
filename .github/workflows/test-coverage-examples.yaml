@@ -1,9 +1,7 @@
-# Workflow derived from https://github.com/r-lib/actions/tree/v2/examples
-#
-# The workflow checks if the share of functionality covered by user-facing examples
-# is above the chosen threshold.
+# To understand the aim and scope of this workflow, have a look at these slides:
+# https://indrajeetpatil.github.io/preventive-r-package-care/
 
-#name: test-coverage-examples
+# name: test-coverage-examples
 
 on:
   workflow_call:

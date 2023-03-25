@@ -1,3 +1,6 @@
+# To understand the aim and scope of this workflow, have a look at these slides:
+# https://indrajeetpatil.github.io/preventive-r-package-care/
+
 # name: check-link-rot
 
 on:
