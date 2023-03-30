@@ -25,6 +25,7 @@ jobs:
           pak-version: devel
           extra-packages: |
             local::.
+            any::poorman
             any::purrr
 
       - name: Run Tests in Random Order
@@ -33,6 +34,7 @@ jobs:
           withr::local_envvar(TESTTHAT_PARALLEL = "FALSE")
           library(cli)
           library(glue)
+          library(poorman)
           library(testthat)
           pkgload::load_all(".")
           test_script_paths <- testthat::find_test_scripts("tests/testthat")
@@ -47,6 +49,10 @@ jobs:
             if (has_test_failures) {
               cli_alert_danger(glue("Tests in `{path}` are failing."))
               any_test_failures <<- TRUE
+              failed_tests <- report %>%
+                filter(failed == 1L) %>%
+                select(test, result)
+              print(glue::glue_data(failed_tests, "Test `{test}` is failing:\n{purrr::pluck(result, 1L, 1L)}"))
             }
             if (has_test_errors) {
               cli_alert_danger(glue("There was error while running tests in `{path}`."))
@@ -62,10 +68,10 @@ jobs:
           purrr::walk(randomized_test_script_paths, test_path)
           cli_rule()
           if (any_test_failures) {
-            cli_abort("Tests in some files are failing. Check the log.")
+            cli_abort("Tests in some files are failing.")
           }
           if (any_test_errors) {
-            cli_abort("There was error while running tests in some files. Check the log.")
+            cli_abort("There was error while running tests in some files.")
           }
           if (!any_test_failures && !any_test_errors) {
             cli_alert_success("Tests from all files are passing!")
