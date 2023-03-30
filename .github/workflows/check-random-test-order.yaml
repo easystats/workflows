@@ -48,7 +48,7 @@ jobs:
           withr::local_envvar(TESTTHAT_PARALLEL = "FALSE")
           library(cli)
           library(glue)
-          library(poorman)
+          suppressPackageStartupMessages(library(poorman))
           library(testthat)
           pkgload::load_all(".")
           test_script_paths <- testthat::find_test_scripts("tests/testthat")
