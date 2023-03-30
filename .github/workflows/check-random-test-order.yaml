@@ -41,7 +41,7 @@ jobs:
           any_test_failures <- FALSE
           any_test_errors <- FALSE
           test_path <- function(path) {
-            report <- as.data.frame(testthat::test_file(path, reporter = "silent"))
+            report <- as.data.frame(testthat::test_file(path))
             has_test_failures <- any(report$failed == 1L)
             has_test_errors <- any(report$error == 1L)
             if (has_test_failures) {
