@@ -68,6 +68,8 @@ jobs:
             if (has_test_errors) {
               cli_alert_danger(glue("There was error while running tests in `{path}`."))
               any_test_errors <<- TRUE
+              errored_tests <- tibble::as_tibble(subset(report, error == 1L)[, c("test", "result")])
+              print(glue::glue_data(errored_tests, "Test `{test}` has error:\n{purrr::pluck(result, 1L, 1L)}"))
             }
             if (!has_test_failures && !has_test_errors) {
               cli_alert_success(glue("All tests passing in `{path}`."))
