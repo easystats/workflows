@@ -62,7 +62,7 @@ jobs:
             if (has_test_failures) {
               cli_alert_danger(glue("Tests in `{path}` are failing."))
               any_test_failures <<- TRUE
-              failed_tests <- subset(report, failed == 1L)[, c("test", "result")]
+              failed_tests <- tibble::as_tibble(subset(report, failed == 1L)[, c("test", "result")])
               print(glue::glue_data(failed_tests, "Test `{test}` is failing:\n{purrr::pluck(result, 1L, 1L)}"))
             }
             if (has_test_errors) {
