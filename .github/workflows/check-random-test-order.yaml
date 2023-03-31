@@ -34,7 +34,6 @@ jobs:
             Matrix=?ignore-before-r=100.0.0
             glmmTMB=?ignore-before-r=100.0.0
             local::.
-            any::poorman
             any::purrr
 
       - name: Install mmrm and glmmTMB from source
@@ -48,8 +47,6 @@ jobs:
           withr::local_envvar(TESTTHAT_PARALLEL = "FALSE")
           library(cli)
           library(glue)
-          suppressPackageStartupMessages(library(poorman))
-          library(testthat)
           pkgload::load_all(".")
           test_script_paths <- testthat::find_test_scripts("tests/testthat")
           set.seed(123)
@@ -63,9 +60,7 @@ jobs:
             if (has_test_failures) {
               cli_alert_danger(glue("Tests in `{path}` are failing."))
               any_test_failures <<- TRUE
-              failed_tests <- report %>%
-                filter(failed == 1L) %>%
-                select(test, result)
+              failed_tests <- subset(report, failed == 1L)[, c("test", "result")]
               print(glue::glue_data(failed_tests, "Test `{test}` is failing:\n{purrr::pluck(result, 1L, 1L)}"))
             }
             if (has_test_errors) {
