@@ -35,6 +35,7 @@ jobs:
             Matrix=?ignore-before-r=100.0.0
             glmmTMB=?ignore-before-r=100.0.0
             local::.
+            any::BH
             any::purrr
 
       - name: Install mmrm and glmmTMB from source
