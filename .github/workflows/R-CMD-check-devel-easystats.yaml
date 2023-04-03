@@ -34,8 +34,8 @@ jobs:
 
       - uses: r-lib/actions/setup-r-dependencies@v2
         with:
-          #cache-version: 2
           pak-version: devel
+          upgrade: '"TRUE"'
           extra-packages: |
             local::.
             any::rcmdcheck

@@ -28,6 +28,7 @@ jobs:
       - uses: r-lib/actions/setup-r-dependencies@v2
         with:
           pak-version: devel
+          upgrade: '"TRUE"'
           extra-packages: |
             mmrm=?ignore-before-r=100.0.0
             TMB=?ignore-before-r=100.0.0

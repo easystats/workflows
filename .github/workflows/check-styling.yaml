@@ -24,14 +24,13 @@ jobs:
         with:
           use-public-rspm: true
 
-      # TODO: remove any::vctrs when binaries are available for 0.6.0
       - uses: r-lib/actions/setup-r-dependencies@v2
         with:
           pak-version: devel
+          upgrade: '"TRUE"'
           dependencies: '"hard"'
           extra-packages: |
             local::.
-            any::vctrs
             r-lib/styler
           needs: |
             styler
