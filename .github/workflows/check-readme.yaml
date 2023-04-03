@@ -55,6 +55,7 @@ jobs:
             easystats/report
             easystats/see
             easystats/modelbased
+            speedglm=?ignore
 
       - name: Render README
         run: |

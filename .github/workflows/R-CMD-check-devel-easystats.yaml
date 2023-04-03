@@ -52,6 +52,7 @@ jobs:
             TMB=?ignore-before-r=100.0.0
             Matrix=?ignore-before-r=100.0.0
             glmmTMB=?ignore-before-r=100.0.0
+            speedglm=?ignore
           needs: check
 
       # install *after* other deps to avoid FreeADFunObject error

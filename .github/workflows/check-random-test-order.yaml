@@ -37,6 +37,7 @@ jobs:
             local::.
             any::BH
             any::purrr
+            speedglm=?ignore
 
       - name: Install mmrm and glmmTMB from source
         run: |
