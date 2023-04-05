@@ -21,9 +21,9 @@ jobs:
         config:
           # CRAN does not provide macOS binaries for R-devel, so some packages
           # need to be built from source. To avoid that, use R-release on macOS.
-          - { os: macos-latest, r: "release" }
-          - { os: windows-latest, r: "devel" }
-          - { os: ubuntu-latest, r: "devel" }
+          - { os: macos-latest, r: "release", rtools: "42" }
+          - { os: windows-latest, r: "devel", rtools: "43" }
+          - { os: ubuntu-latest, r: "devel", rtools: "43" }
 
     env:
       GITHUB_PAT: ${{ secrets.GITHUB_TOKEN }}
@@ -41,6 +41,7 @@ jobs:
           r-version: ${{ matrix.config.r }}
           http-user-agent: "release"
           use-public-rspm: true
+          rtools-version: ${{ matrix.config.rtools }}
 
       - name: Install packages from source
         run: |
