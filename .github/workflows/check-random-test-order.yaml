@@ -38,6 +38,7 @@ jobs:
             any::BH
             any::purrr
             speedglm=?ignore
+            cplm=?ignore
 
       - name: Install mmrm and glmmTMB from source
         run: |

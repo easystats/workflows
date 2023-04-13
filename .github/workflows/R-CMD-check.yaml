@@ -143,6 +143,7 @@ jobs:
             ivreg=?ignore-before-r=4.1.0
             AER=?ignore-before-r=4.1.0
             speedglm=?ignore
+            cplm=?ignore
           needs: check
 
       # install *after* other deps to avoid FreeADFunObject error
