@@ -27,8 +27,10 @@ jobs:
           upgrade: '"TRUE"'
           extra-packages: |
             any::gh
-            r-lib/lintr
             any::purrr
+            r-lib/lintr
+            speedglm=?ignore
+            cplm=?ignore
           needs: check
 
       - name: Install package
