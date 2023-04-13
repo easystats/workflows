@@ -37,6 +37,8 @@ jobs:
             TMB=?ignore-before-r=100.0.0
             Matrix=?ignore-before-r=100.0.0
             glmmTMB=?ignore-before-r=100.0.0
+            speedglm=?ignore
+            cplm=?ignore
             any::BH
             any::devtools
             local::.
