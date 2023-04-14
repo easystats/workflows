@@ -33,6 +33,7 @@ jobs:
           upgrade: '"TRUE"'
           extra-packages: |
             r-lib/covr
+            any::BH
             local::.
 
       - name: Test example coverage
