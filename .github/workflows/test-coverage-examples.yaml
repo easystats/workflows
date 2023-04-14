@@ -35,6 +35,8 @@ jobs:
             r-lib/covr
             any::BH
             local::.
+            speedglm=?ignore
+            cplm=?ignore
 
       - name: Test example coverage
         run: |

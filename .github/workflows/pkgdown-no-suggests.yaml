@@ -42,6 +42,8 @@ jobs:
             any::rmarkdown
             r-lib/pkgdown
             local::.
+            speedglm=?ignore
+            cplm=?ignore
           needs: website
 
       - name: Build site
