@@ -30,15 +30,16 @@ jobs:
           pak-version: devel
           upgrade: '"TRUE"'
           extra-packages: |
+            any::BH
+            any::purrr
             mmrm=?ignore-before-r=100.0.0
             TMB=?ignore-before-r=100.0.0
             Matrix=?ignore-before-r=100.0.0
             glmmTMB=?ignore-before-r=100.0.0
             local::.
-            any::BH
-            any::purrr
-            speedglm=?ignore
             cplm=?ignore
+            panelr=?ignore
+            speedglm=?ignore
 
       - name: Install mmrm and glmmTMB from source
         run: |

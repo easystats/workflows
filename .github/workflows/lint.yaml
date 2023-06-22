@@ -28,8 +28,9 @@ jobs:
           pak-version: devel
           extra-packages: |
             r-lib/lintr
-            speedglm=?ignore
             cplm=?ignore
+            panelr=?ignore
+            speedglm=?ignore
             local::.
           needs: lint
 

@@ -143,8 +143,9 @@ jobs:
             ivreg=?ignore-before-r=4.1.0
             AER=?ignore-before-r=4.1.0
             nestedLogit=?ignore-before-r=4.1.0
-            speedglm=?ignore-before-r=4.0.0
-            cplm=?ignore-before-r=4.0.0
+            cplm=?ignore
+            panelr=?ignore
+            speedglm=?ignore
           needs: check
 
       # install *after* other deps to avoid FreeADFunObject error

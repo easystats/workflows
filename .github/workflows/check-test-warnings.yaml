@@ -33,14 +33,15 @@ jobs:
         with:
           upgrade: '"TRUE"'
           extra-packages: |
+            any::BH
+            any::devtools
             mmrm=?ignore-before-r=100.0.0
             TMB=?ignore-before-r=100.0.0
             Matrix=?ignore-before-r=100.0.0
             glmmTMB=?ignore-before-r=100.0.0
-            speedglm=?ignore
             cplm=?ignore
-            any::BH
-            any::devtools
+            panelr=?ignore
+            speedglm=?ignore
             local::.
           pak-version: devel
 
