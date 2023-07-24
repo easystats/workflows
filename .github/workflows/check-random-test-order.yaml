@@ -52,7 +52,7 @@ jobs:
           withr::local_envvar(TESTTHAT_PARALLEL = "FALSE")
           library(cli)
           library(glue)
-          pkgload::load_all(".")
+          pkgload::load_all(".", quiet = TRUE)
           test_script_paths <- testthat::find_test_scripts("tests/testthat")
           seed <- sample.int(1e6, 1L)
           cli_inform("Chosen seed for the current test run: {seed}")
