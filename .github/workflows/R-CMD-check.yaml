@@ -72,7 +72,7 @@ jobs:
           sudo locale-gen en_US
           echo "LC_ALL=en_US" >> $GITHUB_ENV
 
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v4
 
       - uses: r-lib/actions/setup-pandoc@v2
         with:
