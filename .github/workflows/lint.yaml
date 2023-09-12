@@ -47,6 +47,7 @@ jobs:
             namespace_linter = NULL,
             nonportable_path_linter = NULL,
             object_length_linter(50L),
+            object_name_linter = NULL,
             object_usage_linter = NULL,
             todo_comment_linter = NULL,
             undesirable_function_linter(c("mapply" = NA, "sapply" = NA, "setwd" = NA)),

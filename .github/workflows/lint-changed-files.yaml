@@ -55,6 +55,7 @@ jobs:
             line_length_linter(120L),
             namespace_linter = NULL,
             nonportable_path_linter = NULL,
+            object_name_linter = NULL,
             object_length_linter(50L),
             object_usage_linter = NULL,
             todo_comment_linter = NULL,
