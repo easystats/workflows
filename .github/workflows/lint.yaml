@@ -43,6 +43,7 @@ jobs:
             cyclocomp_linter(40L),
             extraction_operator_linter = NULL,
             implicit_integer_linter = NULL,
+            library_call_linter = NULL,
             line_length_linter(120L),
             namespace_linter = NULL,
             nonportable_path_linter = NULL,
