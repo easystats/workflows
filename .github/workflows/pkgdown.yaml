@@ -40,9 +40,6 @@ jobs:
             glmmTMB=?ignore-before-r=100.0.0
             r-lib/pkgdown
             local::.
-            cplm=?ignore
-            panelr=?ignore
-            speedglm=?ignore
           needs: website
 
       # install *after* other deps to avoid FreeADFunObject error

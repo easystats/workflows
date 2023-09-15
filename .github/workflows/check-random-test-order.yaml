@@ -37,9 +37,6 @@ jobs:
             Matrix=?ignore-before-r=100.0.0
             glmmTMB=?ignore-before-r=100.0.0
             local::.
-            cplm=?ignore
-            panelr=?ignore
-            speedglm=?ignore
 
       - name: Install mmrm and glmmTMB from source
         run: |

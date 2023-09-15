@@ -41,9 +41,6 @@ jobs:
             TMB=?ignore-before-r=100.0.0
             Matrix=?ignore-before-r=100.0.0
             glmmTMB=?ignore-before-r=100.0.0
-            cplm=?ignore
-            panelr=?ignore
-            speedglm=?ignore
             any::BH
             any::purrr
             local::.

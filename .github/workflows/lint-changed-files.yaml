@@ -29,9 +29,6 @@ jobs:
             any::gh
             any::purrr
             r-lib/lintr
-            cplm=?ignore
-            panelr=?ignore
-            speedglm=?ignore
           needs: check
 
       - name: Install package
