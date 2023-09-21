@@ -39,6 +39,7 @@ jobs:
             absolute_path_linter = NULL,
             cyclocomp_linter(40L),
             extraction_operator_linter = NULL,
+            if_not_else_linter(exceptions = character(0L)),
             implicit_integer_linter = NULL,
             library_call_linter = NULL,
             line_length_linter(120L),
