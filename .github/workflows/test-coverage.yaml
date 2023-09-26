@@ -28,14 +28,30 @@ jobs:
           r-version: "release"
           use-public-rspm: true
 
+      - name: Install packages from source
+        run: |
+          install.packages(c("Matrix", "TMB"), type = "source")
+        shell: Rscript {0}
+
       - uses: r-lib/actions/setup-r-dependencies@v2
         with:
+          pak-version: devel
           extra-packages: |
-           any::covr
+            any::covr
+            mmrm=?ignore-before-r=100.0.0
+            TMB=?ignore-before-r=100.0.0
+            Matrix=?ignore-before-r=100.0.0
+            glmmTMB=?ignore-before-r=100.0.0
+            local::.
           needs: coverage
+
+      - name: Install mmrm and glmmTMB from source
+        run: |
+          install.packages(c("mmrm", "glmmTMB"), type = "source")
+        shell: Rscript {0}
 
       - name: Test coverage
         run: |
-          options(crayon.enabled = TRUE, error = rlang::entrace)
+          options(crayon.enabled = TRUE)
           covr::codecov(quiet = FALSE)
         shell: Rscript {0}

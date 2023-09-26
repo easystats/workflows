@@ -28,9 +28,7 @@ jobs:
       - uses: r-lib/actions/setup-r-dependencies@v2
         with:
           pak-version: devel
-          upgrade: '"TRUE"'
           extra-packages: |
-            any::BH
             any::purrr
             mmrm=?ignore-before-r=100.0.0
             TMB=?ignore-before-r=100.0.0
@@ -45,7 +43,7 @@ jobs:
 
       - name: Run Tests in Random Order
         run: |
-          options(crayon.enabled = TRUE)
+          options(crayon.enabled = TRUE, error = rlang::entrace)
           withr::local_envvar(TESTTHAT_PARALLEL = "FALSE")
           library(cli)
           library(glue)
