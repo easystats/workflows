@@ -1,11 +1,10 @@
+# To understand the aim and scope of this workflow, have a look at these slides:
+# https://indrajeetpatil.github.io/preventive-r-package-care/
+
 #name: update-to-latest-easystats
 
 on:
   workflow_call:
-
-# Run on a schedule (once a month)
-schedule:
-  - cron: "0 0 1 * *"
 
 jobs:
   update-to-latest-easystats:
