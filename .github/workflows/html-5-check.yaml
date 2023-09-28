@@ -1,7 +1,7 @@
 # To understand the aim and scope of this workflow, have a look at these slides:
 # https://indrajeetpatil.github.io/preventive-r-package-care/
 
-# name: HTML5 check
+# name: html-5-check
 
 on:
   workflow_call:
@@ -11,7 +11,7 @@ concurrency:
   cancel-in-progress: true
 
 jobs:
-  HTML5-check:
+  html-5-check:
     runs-on: ubuntu-latest
 
     env:
