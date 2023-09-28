@@ -32,8 +32,7 @@ jobs:
           pak-version: devel
           upgrade: '"TRUE"'
           extra-packages: |
-            r-lib/covr
-            any::BH
+            any::covr
             local::.
 
       - name: Test example coverage
