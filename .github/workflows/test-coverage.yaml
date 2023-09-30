@@ -42,5 +42,5 @@ jobs:
       - name: Test coverage
         run: |
           options(crayon.enabled = TRUE)
-          covr::codecov(quiet = FALSE)
+          covr::codecov()
         shell: Rscript {0}
