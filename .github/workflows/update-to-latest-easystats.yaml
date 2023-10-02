@@ -24,6 +24,12 @@ jobs:
         id: update_description
         run: |
           usethis::use_latest_dependencies()
+        shell: Rscript {0}
+
+      - name: Bump package version
+        id: bump_version
+        if: ${{ steps.update_description.outputs.changed }}
+        run: |
           usethis::use_version("dev", push = FALSE)
         shell: Rscript {0}
 
