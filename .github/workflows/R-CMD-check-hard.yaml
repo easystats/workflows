@@ -39,6 +39,7 @@ jobs:
           cache: false
           extra-packages: |
             any::rcmdcheck
+            any::curl
             any::testthat
             any::knitr
             any::rmarkdown
