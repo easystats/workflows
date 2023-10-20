@@ -33,6 +33,7 @@ jobs:
         with:
           upgrade: 'TRUE'
           extra-packages: |
+            any::devtools
             mmrm=?ignore-before-r=100.0.0
             TMB=?ignore-before-r=100.0.0
             Matrix=?ignore-before-r=100.0.0
@@ -49,5 +50,6 @@ jobs:
       - name: Run Tests
         run: |
           options(crayon.enabled = TRUE, warn = 2L)
-          testthat::test_dir("tests")
+          # testthat::test_dir("tests")
+          devtools::test()
         shell: Rscript {0}
