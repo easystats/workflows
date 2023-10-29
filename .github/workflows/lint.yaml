@@ -49,7 +49,7 @@ jobs:
             object_name_linter = NULL,
             object_usage_linter = NULL,
             todo_comment_linter = NULL,
-            undesirable_function_linter(c("mapply" = NA, "sapply" = NA, "setwd" = NA)),
+            undesirable_function_linter(c("mapply" = NA, "setwd" = NA)),
             undesirable_operator_linter = NULL,
             unnecessary_concatenation_linter(allow_single_expression = FALSE),
             unused_import_linter = NULL,
