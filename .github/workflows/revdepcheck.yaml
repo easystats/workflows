@@ -29,7 +29,7 @@ jobs:
 
       - name: Install packages from source
         run: |
-          install.packages(c("Matrix", "TMB"), type = "source")
+          install.packages(c("Matrix", "MatrixModels", "TMB"), type = "source")
         shell: Rscript {0}
 
       - uses: r-lib/actions/setup-r-dependencies@v2
@@ -43,6 +43,7 @@ jobs:
             mmrm=?ignore-before-r=100.0.0
             TMB=?ignore-before-r=100.0.0
             Matrix=?ignore-before-r=100.0.0
+            MatrixModels=?ignore-before-r=100.0.0
             glmmTMB=?ignore-before-r=100.0.0
           pak-version: devel
 

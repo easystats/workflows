@@ -86,7 +86,7 @@ jobs:
 
       - name: Install packages from source
         run: |
-          install.packages(c("Matrix", "TMB"), type = "source")
+          install.packages(c("Matrix", "MatrixModels", "TMB"), type = "source")
         shell: Rscript {0}
 
       # TODO: Check which of the ignore conditions are still relevant given the
@@ -102,6 +102,7 @@ jobs:
             mmrm=?ignore-before-r=100.0.0
             TMB=?ignore-before-r=100.0.0
             Matrix=?ignore-before-r=100.0.0
+            MatrixModels=?ignore-before-r=100.0.0
             glmmTMB=?ignore-before-r=100.0.0
             bayesQR=?ignore-before-r=4.2.0
             epiR=?ignore-before-r=4.0.0
