@@ -47,10 +47,7 @@ jobs:
       # install *after* other deps to avoid FreeADFunObject error
       - name: Install other packages from source
         run: |
-          cran_db <- available.packages(repos = "https://cran.r-project.org/")
-          pkgs <- tools::package_dependencies("Matrix", db = cran_db, which = "LinkingTo", reverse = TRUE)[[1L]]
-          install.packages(pkgs, type = "source")
-          install.packages(c("mmrm", "MatrixModels", "glmmTMB", "SeuratObject", "softImpute"), type = "source")
+          install.packages(c("mmrm", "MatrixModels", "glmmTMB"), type = "source")
         shell: Rscript {0}
 
       - name: Run examples
