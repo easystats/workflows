@@ -41,7 +41,7 @@ jobs:
           extra-packages: |
             any::rcmdcheck
             any::curl
-            any::testthat
+            r-lib/testthat
             any::knitr
             any::rmarkdown
           needs: check
