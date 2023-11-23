@@ -152,7 +152,7 @@ jobs:
 
       # install *after* other deps to avoid FreeADFunObject error
       # glmmTMB uses `deparse1()`, which was introduced in R 4.0
-      - name: Install mmrm and glmmTMB from source
+      - name: Install other packages from source
         run: |
           if (getRversion() >= "4.0.0") {
             install.packages(c("mmrm", "MatrixModels", "glmmTMB"), type = "source")

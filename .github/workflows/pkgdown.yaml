@@ -45,9 +45,9 @@ jobs:
           needs: website
 
       # install *after* other deps to avoid FreeADFunObject error
-      - name: Install glmmTMB from source
+      - name: Install other packages from source
         run: |
-          install.packages("glmmTMB", type = "source")
+          install.packages(c("mmrm", "MatrixModels", "glmmTMB"), type = "source")
         shell: Rscript {0}
 
       - name: Build site
