@@ -96,6 +96,7 @@ jobs:
         with:
           pak-version: devel
           upgrade: 'TRUE'
+          cache-version: 2
           extra-packages: |
             any::rcmdcheck
             any::BH

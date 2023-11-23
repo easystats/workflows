@@ -38,6 +38,7 @@ jobs:
         with:
           pak-version: devel
           upgrade: 'TRUE'
+          cache-version: 2
           extra-packages: |
             local::.
             any::rcmdcheck

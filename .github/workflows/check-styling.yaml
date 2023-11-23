@@ -28,6 +28,7 @@ jobs:
         with:
           pak-version: devel
           upgrade: 'TRUE'
+          cache-version: 2
           dependencies: '"hard"'
           extra-packages: |
             local::.
