@@ -1,13 +1,23 @@
+---
+output: github_document
+---
 
 <!-- README.md is generated from README.Rmd. Please edit that file -->
 
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>",
+  fig.path = "man/figures/README-",
+  out.width = "100%"
+)
+```
+
 # `{easystats}`-workflows
 
-GitHub Actions for `{easystats}` packages.
+GitHub Actions for `{easystats}` packages. 
 
-To know more about how to build automation infrastructure to improve
-user experience and development workflow of R packages using these
-workflows, have a look at these slides:
+To know more about how to build automation infrastructure to improve user experience and development workflow of R packages using these workflows, have a look at these slides:
 
 <https://indrajeetpatil.github.io/preventive-r-package-care/>
 
@@ -15,14 +25,14 @@ workflows, have a look at these slides:
 
 ## Reusing workflows
 
-You don’t need to copy these workflows if you are happy as they are. In
-this case, you can just reuse the workflow.
+You don't need to copy these workflows if you are happy as they are. In this case,
+you can just reuse the workflow. 
 
-For example, if you wanted to use `check-spelling` workflow, your
-workflow (in the file `.github/workflows/check-spelling.yaml`) would
-look like so:
+For example, if you wanted to use `check-spelling` workflow, your workflow 
+(in the file `.github/workflows/check-spelling.yaml`) would look like so:
 
-``` yaml
+
+```yaml
 on:
   push:
     branches: [main, master]
@@ -38,12 +48,12 @@ jobs:
 
 ## Copying workflows
 
-If you wish to copy any of these workflows in your own pages, you can do
-so without asking for any permissions.
+If you wish to copy any of these workflows in your own pages, you can do so 
+without asking for any permissions.
 
 Just keep in mind that you will need to change the following lines:
 
-``` yaml
+```yaml
 on:
   workflow_call:
   
@@ -52,7 +62,7 @@ on:
 
 to (e.g.)
 
-``` yaml
+```yaml
 on:
   push:
     branches: [main, master]
@@ -67,7 +77,7 @@ name: test-coverage
 ### General-purpose workflows
 
 | Workflow                     | Purpose                                                                                                       |
-|:-----------------------------|:--------------------------------------------------------------------------------------------------------------|
+| :--------------------------- | :------------------------------------------------------------------------------------------------------------ |
 | R-CMD-check-hard.yaml        | Runs R CMD check with hard dependencies only (`Imports`)                                                      |
 | R-CMD-check-strict.yaml      | Runs R CMD check and fails if there are any `WARNING`s or `NOTE`s                                             |
 | R-CMD-check.yaml             | Runs standard R CMD check                                                                                     |
@@ -92,23 +102,18 @@ name: test-coverage
 ### `easystats`-related workflows
 
 | Workflow                         | Purpose                                                                         |
-|:---------------------------------|:--------------------------------------------------------------------------------|
+| :------------------------------- | :------------------------------------------------------------------------------ |
 | R-CMD-check-devel-easystats.yaml | Runs R CMD check with the development version of all `easystats` packages       |
 | update-to-latest-easystats.yaml  | Creates a PR to bump all `easystats` dependencies to their latest CRAN version. |
 
 ## Acknowledgments
 
-These workflows are based on
-[r-lib/actions](https://github.com/r-lib/actions). Huge thanks to the
-creators, maintainers, and contributors to that repo!!
+These workflows are based on [r-lib/actions](https://github.com/r-lib/actions). Huge thanks to the creators, maintainers, and contributors to that repo!!
 
 ## License ![CC0 licensed](https://img.shields.io/github/license/r-lib/actions)
 
-All examples in this repository are published with the [CC0](./LICENSE)
-license.
+All examples in this repository are published with the [CC0](./LICENSE) license.
 
 ## Other resources
 
-Find more [CI/CD tools for
-R](https://indrajeetpatil.github.io/awesome-r-pkgtools/#cicd) at
-[awesome-r-pkgtools](https://github.com/IndrajeetPatil/awesome-r-pkgtools).
+Find more [CI/CD tools for R](https://indrajeetpatil.github.io/awesome-r-pkgtools/#cicd) at [awesome-r-pkgtools](https://github.com/IndrajeetPatil/awesome-r-pkgtools).
