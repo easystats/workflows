@@ -100,6 +100,7 @@ jobs:
           extra-packages: |
             any::rcmdcheck
             any::BH
+            lme4=?ignore-before-r=100.0.0
             mmrm=?ignore-before-r=100.0.0
             TMB=?ignore-before-r=100.0.0
             Matrix=?ignore-before-r=100.0.0
@@ -155,7 +156,7 @@ jobs:
       - name: Install other packages from source
         run: |
           if (getRversion() >= "4.0.0") {
-            install.packages(c("mmrm", "MatrixModels", "glmmTMB"), type = "source")
+            install.packages(c("mmrm", "MatrixModels", "glmmTMB", "lme4"), type = "source")
           }
         shell: Rscript {0}
 

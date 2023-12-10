@@ -47,7 +47,7 @@ jobs:
       # install *after* other deps to avoid FreeADFunObject error
       - name: Install other packages from source
         run: |
-          install.packages(c("mmrm", "MatrixModels", "glmmTMB"), type = "source")
+          install.packages(c("mmrm", "MatrixModels", "glmmTMB", "lme4"), type = "source")
         shell: Rscript {0}
 
       - name: Build site
