@@ -43,27 +43,26 @@ jobs:
           all_files <- list.files(recursive = TRUE)
           exclusions_list <- as.list(setdiff(all_files, changed_files))
           library(lintr)
-          lint_package(linters = linters_with_defaults(
+          options(crayon.enabled = TRUE)
+          library(lintr)
+          lint_package(linters = all_linters(
             absolute_path_linter = NULL,
-            commented_code_linter = NULL,
-            cyclocomp_linter = NULL,
-            extraction_operator_linter = NULL,
+            cyclocomp_linter(40L),
             if_not_else_linter(exceptions = character(0L)),
-            implicit_integer_linter = NULL,
             indentation_linter = NULL,
+            implicit_integer_linter = NULL,
             library_call_linter = NULL,
             line_length_linter(120L),
             namespace_linter = NULL,
             nonportable_path_linter = NULL,
-            object_name_linter = NULL,
             object_length_linter(50L),
+            object_name_linter = NULL,
             object_usage_linter = NULL,
             todo_comment_linter = NULL,
             undesirable_function_linter(c("mapply" = NA, "setwd" = NA)),
             undesirable_operator_linter = NULL,
             unnecessary_concatenation_linter(allow_single_expression = FALSE),
-            unused_import_linter = NULL,
-            defaults = linters_with_tags(tags = NULL)
+            unused_import_linter = NULL
           ), exclusions = exclusions_list)
         shell: Rscript {0}
         env:
