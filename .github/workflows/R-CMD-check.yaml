@@ -106,7 +106,12 @@ jobs:
             Matrix=?ignore-before-r=100.0.0
             MatrixModels=?ignore-before-r=100.0.0
             glmmTMB=?ignore-before-r=100.0.0
+            estimability=?ignore-before-r=4.3.0
+            effects=?ignore-before-r=4.3.0
+            nestedLogit=?ignore-before-r=4.3.0
+            FactoMineR=?ignore-before-r=4.3.0
             bayesQR=?ignore-before-r=4.2.0
+            MuMIn=?ignore-before-r=4.2.0
             epiR=?ignore-before-r=4.0.0
             energy=?ignore-before-r=4.0.0
             gam=?ignore-before-r=4.0.0
@@ -135,20 +140,16 @@ jobs:
             mediation=?ignore-before-r=4.1.0
             rstatix=?ignore-before-r=4.1.0
             PROreg=?ignore-before-r=4.1.0
-            FactoMineR=?ignore-before-r=4.1.0
             factoextra=?ignore-before-r=4.1.0
-            estimability=?ignore-before-r=4.3.0
-            emmeans=?ignore-before-r=4.3.0
+            emmeans=?ignore-before-r=4.1.0
             rmcorr=?ignore-before-r=4.1.0
             rms=?ignore-before-r=4.1.0
             randomForest=?ignore-before-r=4.1.0
-            MuMIn=?ignore-before-r=4.2.0
             pbkrtest=?ignore-before-r=4.1.0
             afex=?ignore-before-r=4.1.0
             car=?ignore-before-r=4.1.0
             ivreg=?ignore-before-r=4.1.0
             AER=?ignore-before-r=4.1.0
-            nestedLogit=?ignore-before-r=4.1.0
             WRS2=?ignore-before-r=4.1.0
             tinytable=?ignore-before-r=4.1.0
           needs: check
