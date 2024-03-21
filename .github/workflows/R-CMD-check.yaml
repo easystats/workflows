@@ -34,7 +34,7 @@ jobs:
           #- {os: macOS-latest, r: 'oldrel-2'}
           #- {os: macOS-latest, r: 'oldrel-3'}
 
-          #- { os: windows-latest, r: "devel" }
+          - { os: windows-latest, r: "devel" }
           - { os: windows-latest, r: "release" }
           #- { os: windows-latest, r: "oldrel" }
           #- {os: windows-latest, r: 'oldrel-2'}
