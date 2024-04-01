@@ -35,7 +35,7 @@ jobs:
 
       - uses: r-lib/actions/setup-r-dependencies@v2
         with:
-          upgrade: 'TRUE'
+          upgrade: "TRUE"
           cache-version: 2
           extra-packages: |
             lme4=?ignore-before-r=100.0.0

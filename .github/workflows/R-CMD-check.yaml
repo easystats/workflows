@@ -20,24 +20,16 @@ jobs:
       fail-fast: false
       matrix:
         config:
-          ##~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-          ##                              IMPORTANT                                   ##
-          ##                                                                          ##
-          ##             Checks are deliberately not run on R-devel.                  ##
-          ##  This is because they are already run in `R-CMD-check-strict` workflow.  ##
-          ##  Other commented workflows don't add extra value and are an overkill.    ##
-          ##~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
           #- {os: macOS-latest, r: 'devel'}
           - { os: macOS-latest, r: "release" }
           #- { os: macOS-latest, r: "oldrel" }
           #- {os: macOS-latest, r: 'oldrel-2'}
           #- {os: macOS-latest, r: 'oldrel-3'}
 
-          - { os: windows-latest, r: "next" }
-          #- { os: windows-latest, r: "devel" }
+          #- { os: windows-latest, r: "next" }
+          - { os: windows-latest, r: "devel" }
           - { os: windows-latest, r: "release" }
-          #- { os: windows-latest, r: "oldrel" }
+          - { os: windows-latest, r: "oldrel" }
           #- {os: windows-latest, r: 'oldrel-2'}
           #- {os: windows-latest, r: 'oldrel-3'}
 
@@ -46,8 +38,8 @@ jobs:
           # use 4.1 to check with rtools40's older compiler
           #- { os: windows-latest, r: "4.1" }
 
-          - { os: ubuntu-latest, r: "next" }
-          #- { os: ubuntu-latest, r: "devel", locale: "en_US" }
+          #- { os: ubuntu-latest, r: "next" }
+          - { os: ubuntu-latest, r: "devel" }
           #- { os: ubuntu-latest, r: "devel", locale: "zh_CN" }
           - { os: ubuntu-latest, r: "release" }
           - { os: ubuntu-latest, r: "oldrel" }
@@ -57,6 +49,7 @@ jobs:
     env:
       GITHUB_PAT: ${{ secrets.GITHUB_TOKEN }}
       R_KEEP_PKG_SOURCE: yes
+      _R_CHECK_CRAN_INCOMING_REMOTE_: false
       _R_CHECK_CRAN_INCOMING_: false
       _R_CHECK_FORCE_SUGGESTS_: false
       _R_CHECK_STOP_ON_INVALID_NUMERIC_VERSION_INPUTS_: true
@@ -68,11 +61,11 @@ jobs:
       #     sudo locale-gen zh_CN.UTF-8
       #     echo "LC_ALL=zh_CN.UTF-8" >> $GITHUB_ENV
 
-      - name: Set locale
-        if: matrix.config.locale == 'en_US'
-        run: |
-          sudo locale-gen en_US
-          echo "LC_ALL=en_US" >> $GITHUB_ENV
+      # - name: Set locale
+      #   if: matrix.config.locale == 'en_US'
+      #   run: |
+      #     sudo locale-gen en_US
+      #     echo "LC_ALL=en_US" >> $GITHUB_ENV
 
       - uses: actions/checkout@v4
 
@@ -91,9 +84,6 @@ jobs:
           install.packages(c("Matrix", "TMB"), type = "source")
         shell: Rscript {0}
 
-      # TODO: Check which of the ignore conditions are still relevant given the
-      # current suggested dependencies and the minimum supported R version.
-      # Update if anything out of date or not needed anymore.
       - uses: r-lib/actions/setup-r-dependencies@v2
         with:
           pak-version: devel
@@ -102,6 +92,8 @@ jobs:
           extra-packages: |
             any::rcmdcheck
             any::BH
+            BayesFactor=?ignore-before-r=100.0.0
+            cplm=?ignore-before-r=100.0.0
             lme4=?ignore-before-r=100.0.0
             mmrm=?ignore-before-r=100.0.0
             TMB=?ignore-before-r=100.0.0
@@ -161,13 +153,15 @@ jobs:
       - name: Install other packages from source
         run: |
           if (getRversion() >= "4.0.0") {
-            install.packages(c("mmrm", "MatrixModels", "glmmTMB", "lme4"), type = "source")
+            install.packages(
+              c("BayesFactor", "cplm", "mmrm", "MatrixModels", "glmmTMB", "lme4"),
+              type = "source"
+            )
           }
         shell: Rscript {0}
 
-      # Don't error on "note" because if any of the suggested packages are not available
-      # for a given R version, this generates a NOTE causing unnecessary build failure
       - uses: r-lib/actions/check-r-package@v2
         with:
-          error-on: '"warning"'
           upload-snapshots: true
+          upload-results: true
+          error-on: '"note"'
