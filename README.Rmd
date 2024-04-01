@@ -79,8 +79,7 @@ name: test-coverage
 | Workflow                     | Purpose                                                                                                       |
 | :--------------------------- | :------------------------------------------------------------------------------------------------------------ |
 | R-CMD-check-hard.yaml        | Runs R CMD check with hard dependencies only (`Imports`)                                                      |
-| R-CMD-check-strict.yaml      | Runs R CMD check and fails if there are any `WARNING`s or `NOTE`s                                             |
-| R-CMD-check.yaml             | Runs standard R CMD check                                                                                     |
+| R-CMD-check.yaml             | Runs standard R CMD check and fails if there are any `WARNING`s or `NOTE`s                                    |
 | test-coverage-examples.yaml  | Checks code coverage via examples in the manual and vignettes                                                 |
 | test-coverage.yaml           | Checks code coverage via tests                                                                                |
 | check-random-test-order.yaml | Randomizes the order in which test files are run to check that tests are self-contained.                      |
@@ -91,8 +90,8 @@ name: test-coverage
 | check-styling.yaml           | Checks code formatting against style guide (using `{styler}`)                                                 |
 | check-test-warnings.yaml     | Checks for warnings in tests                                                                                  |
 | check-vignette-warnings.yaml | Checks for warnings in vignettes                                                                              |
-| lint-changed-files.yaml      | Runs `{lintr}` on the files that were modified to check for code quality issues                               |
 | lint.yaml                    | Runs `{lintr}` on the whole package to check for code quality issues                                          |
+| lint-changed-files.yaml      | Runs `{lintr}` on the files that were modified in a PR to check for code quality issues                       |
 | html-5-check.yaml            | Checks that manual pages are valid HTML5                                                                      |
 | pkgdown.yaml                 | Runs the `{pkgdown}` workflow to check that the documentation website can be built                            |
 | pkgdown-no-suggests.yaml     | Checks that `{pkgdown}` works with hard dependencies only                                                     |
