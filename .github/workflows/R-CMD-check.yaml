@@ -49,10 +49,6 @@ jobs:
     env:
       GITHUB_PAT: ${{ secrets.GITHUB_TOKEN }}
       R_KEEP_PKG_SOURCE: yes
-      _R_CHECK_CRAN_INCOMING_REMOTE_: false
-      _R_CHECK_CRAN_INCOMING_: false
-      _R_CHECK_FORCE_SUGGESTS_: false
-      _R_CHECK_STOP_ON_INVALID_NUMERIC_VERSION_INPUTS_: true
 
     steps:
       # - name: Set locale
@@ -165,3 +161,8 @@ jobs:
           upload-snapshots: true
           upload-results: true
           error-on: 'ifelse(getRversion() > "4.2", "note", "warning")'
+        env:
+          _R_CHECK_CRAN_INCOMING_REMOTE_: false
+          _R_CHECK_CRAN_INCOMING_: false
+          _R_CHECK_FORCE_SUGGESTS_: false
+          _R_CHECK_STOP_ON_INVALID_NUMERIC_VERSION_INPUTS_: true
