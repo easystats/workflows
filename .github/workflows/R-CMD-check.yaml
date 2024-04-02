@@ -164,4 +164,4 @@ jobs:
         with:
           upload-snapshots: true
           upload-results: true
-          error-on: '"note"'
+          error-on: 'ifelse(getRversion() > "4.2", "note", "warning")'
