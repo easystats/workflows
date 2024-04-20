@@ -88,6 +88,7 @@ jobs:
           extra-packages: |
             any::rcmdcheck
             any::BH
+            mhurdle=?ignore-before-r=100.0.0
             BayesFactor=?ignore-before-r=100.0.0
             cplm=?ignore-before-r=100.0.0
             lme4=?ignore-before-r=100.0.0
