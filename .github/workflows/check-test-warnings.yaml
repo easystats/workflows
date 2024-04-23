@@ -35,6 +35,7 @@ jobs:
           cache-version: 2
           extra-packages: |
             any::devtools
+            ivprobit=?ignore-before-r=100.0.0
             mhurdle=?ignore-before-r=100.0.0
             mmrm=?ignore-before-r=100.0.0
             TMB=?ignore-before-r=100.0.0

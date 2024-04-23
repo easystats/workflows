@@ -36,6 +36,7 @@ jobs:
           upgrade: "TRUE"
           cache-version: 2
           extra-packages: |
+            ivprobit=?ignore-before-r=100.0.0
             mhurdle=?ignore-before-r=100.0.0
             TMB=?ignore-before-r=100.0.0
             Matrix=?ignore-before-r=100.0.0

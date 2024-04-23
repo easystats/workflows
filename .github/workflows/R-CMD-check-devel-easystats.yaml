@@ -51,6 +51,7 @@ jobs:
             easystats/effectsize
             easystats/correlation
             easystats/modelbased
+            ivprobit=?ignore-before-r=100.0.0
             mhurdle=?ignore-before-r=100.0.0
             lme4=?ignore-before-r=100.0.0
             mmrm=?ignore-before-r=100.0.0
