@@ -46,16 +46,16 @@ jobs:
           cache-version: 2
           extra-packages: |
             local::.
-            easystats/insight
-            easystats/datawizard
-            easystats/parameters
-            easystats/performance
-            easystats/bayestestR
-            easystats/effectsize
-            easystats/correlation
-            easystats/report
-            easystats/see
-            easystats/modelbased
+            any::insight
+            any::datawizard
+            any::parameters
+            any::performance
+            any::bayestestR
+            any::effectsize
+            any::correlation
+            any::report
+            any::see
+            any::modelbased
 
       - name: Render README
         run: |
