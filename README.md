@@ -70,6 +70,7 @@ name: test-coverage
 |:-----------------------------|:--------------------------------------------------------------------------------------------------------------|
 | R-CMD-check-hard.yaml        | Runs R CMD check with hard dependencies only (`Imports`)                                                      |
 | R-CMD-check.yaml             | Runs standard R CMD check and fails if there are any `WARNING`s or `NOTE`s                                    |
+| R-CMD-check-main.yaml        | Like above, but only runs on two systems. Can be used for main-branches, since full test-suite is run on PR.  |
 | test-coverage-examples.yaml  | Checks code coverage via examples in the manual and vignettes                                                 |
 | test-coverage.yaml           | Checks code coverage via tests                                                                                |
 | check-random-test-order.yaml | Randomizes the order in which test files are run to check that tests are self-contained.                      |
