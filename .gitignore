@@ -4,3 +4,4 @@
 .Rhistory
 .DS_Store
 README.html
+*.code-workspace
