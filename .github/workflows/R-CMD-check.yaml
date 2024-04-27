@@ -152,12 +152,10 @@ jobs:
       # glmmTMB uses `deparse1()`, which was introduced in R 4.0
       - name: Install other packages from source
         run: |
-          if (getRversion() >= "4.0.0") {
-            install.packages(
-              c("BayesFactor", "cplm", "mmrm", "MatrixModels", "glmmTMB", "lme4"),
-              type = "source"
-            )
-          }
+          install.packages(
+            c("BayesFactor", "cplm", "mmrm", "MatrixModels", "glmmTMB", "lme4"),
+            type = "source"
+          )
         shell: Rscript {0}
 
       - uses: r-lib/actions/check-r-package@v2
