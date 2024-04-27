@@ -26,15 +26,7 @@ jobs:
 
       - name: Install packages from source
         run: |
-          if (getRversion() < "4.4.0") {
-            # later versions of Matrix require R >= 4.4
-            install.packages(
-              "https://cran.r-project.org/src/contrib/Archive/Matrix/Matrix_1.6-5.tar.gz",
-              repos = NULL,
-              type = "source"
-            )
-          }
-          install.packages(c("TMB"), type = "source")
+          install.packages(c("Matrix", "TMB"), type = "source")
         shell: Rscript {0}
 
       - uses: r-lib/actions/setup-r-dependencies@v2
