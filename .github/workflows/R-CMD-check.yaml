@@ -99,6 +99,7 @@ jobs:
             Matrix=?ignore-before-r=100.0.0
             MatrixModels=?ignore-before-r=100.0.0
             glmmTMB=?ignore-before-r=100.0.0
+            brms=?ignore-before-r=4.4.0
             estimability=?ignore-before-r=4.3.0
             effects=?ignore-before-r=4.3.0
             nestedLogit=?ignore-before-r=4.3.0
