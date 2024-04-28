@@ -146,6 +146,7 @@ jobs:
             qqplotr=?ignore-before-r=4.0.0
             rtdists=?ignore-before-r=4.0.0
             VGAM=?ignore-before-r=4.0.0
+            ggside=?ignore-before-r=4.0.0
           needs: check
 
       # install *after* other deps to avoid FreeADFunObject error
