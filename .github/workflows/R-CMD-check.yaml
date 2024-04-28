@@ -64,7 +64,9 @@ jobs:
 
       - name: Install packages from source
         run: |
-          install.packages(c("Matrix", "TMB"), type = "source")
+          install.packages("Matrix", type = "source")
+          install.packages("lme4", type = "source")
+          install.packages("TMB", type = "source")
         shell: Rscript {0}
 
       - uses: r-lib/actions/setup-r-dependencies@v2
@@ -140,7 +142,7 @@ jobs:
       - name: Install other packages from source
         run: |
           install.packages(
-            c("BayesFactor", "cplm", "mmrm", "MatrixModels", "glmmTMB", "lme4"),
+            c("BayesFactor", "cplm", "mmrm", "MatrixModels", "glmmTMB"),
             type = "source"
           )
         shell: Rscript {0}
