@@ -24,11 +24,6 @@ jobs:
           #r-version: "devel"
           use-public-rspm: true
 
-      - name: Install packages from source
-        run: |
-          install.packages(c("Matrix", "TMB"), type = "source")
-        shell: Rscript {0}
-
       - uses: r-lib/actions/setup-r-dependencies@v2
         with:
           upgrade: "TRUE"
@@ -37,19 +32,8 @@ jobs:
             any::devtools
             ivprobit=?ignore-before-r=100.0.0
             mhurdle=?ignore-before-r=100.0.0
-            mmrm=?ignore-before-r=100.0.0
-            TMB=?ignore-before-r=100.0.0
-            Matrix=?ignore-before-r=100.0.0
-            MatrixModels=?ignore-before-r=100.0.0
-            glmmTMB=?ignore-before-r=100.0.0
             local::.
           pak-version: devel
-
-      # install *after* other deps to avoid FreeADFunObject error
-      - name: Install other packages from source
-        run: |
-          install.packages(c("mmrm", "MatrixModels", "glmmTMB", "lme4"), type = "source")
-        shell: Rscript {0}
 
       - name: Run Tests
         run: |
