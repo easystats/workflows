@@ -64,7 +64,11 @@ jobs:
 
       - name: Install packages from source
         run: |
-          install.packages("Matrix", type = "source")
+          if (getRversion() >= '4.4.0') {
+            install.packages("Matrix", type = "source")
+          } else {
+            install.packages("https://cran.r-project.org/src/contrib/Archive/Matrix/Matrix_1.6-5.tar.gz", type = "source")
+          }
           install.packages("lme4", type = "source")
           install.packages("TMB", type = "source")
         shell: Rscript {0}
