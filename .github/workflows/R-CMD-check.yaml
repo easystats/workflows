@@ -123,6 +123,7 @@ jobs:
             pbkrtest=?ignore-before-r=4.1.0
             afex=?ignore-before-r=4.1.0
             car=?ignore-before-r=4.1.0
+            ICS=?ignore-before-r=4.1.0
             ivreg=?ignore-before-r=4.1.0
             AER=?ignore-before-r=4.1.0
             WRS2=?ignore-before-r=4.1.0
@@ -132,6 +133,7 @@ jobs:
             energy=?ignore-before-r=4.0.0
             gam=?ignore-before-r=4.0.0
             gdtools=?ignore-before-r=4.0.0
+            flextable=?ignore-before-r=4.0.0
             gsl=?ignore-before-r=4.0.0
             fastICA=?ignore-before-r=4.0.0
             metafor=?ignore-before-r=4.0.0
