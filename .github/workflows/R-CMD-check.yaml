@@ -62,13 +62,13 @@ jobs:
           r-version: ${{ matrix.config.r }}
           use-public-rspm: true
 
-      # - name: Install packages from source
-      #   run: |
-      #     if (getRversion() >= '4.4.0') {
-      #       utils::install.packages("Matrix", type = "source")
-      #     } else {
-      #       utils::install.packages("https://cran.r-project.org/src/contrib/Archive/Matrix/Matrix_1.6-5.tar.gz", type = "source")
-      #     }
+      - name: Install packages from source
+        run: |
+          if (getRversion() >= '4.3.3') {
+            utils::install.packages("Matrix", type = "source")
+          } else {
+            utils::install.packages("https://cran.r-project.org/src/contrib/Archive/Matrix/Matrix_1.6-2.tar.gz", type = "source")
+          }
       #     utils::install.packages(
       #       c("BayesFactor", "cplm", "irlba", "lme4", "mmrm", "MatrixModels", "OpenMx", "glmmTMB", "TMB"),
       #       type = "source"
@@ -88,13 +88,13 @@ jobs:
           #   glmmTMB=?ignore-before-r=100.0.0
           #   irlba=?ignore-before-r=100.0.0
           #   lme4=?ignore-before-r=100.0.0
-          #   Matrix=?ignore-before-r=100.0.0
           #   MatrixModels=?ignore-before-r=100.0.0
           #   mmrm=?ignore-before-r=100.0.0
           #   OpenMx=?ignore-before-r=100.0.0
           #   TMB=?ignore-before-r=100.0.0
           extra-packages: |
             any::rcmdcheck
+            Matrix=?ignore-before-r=100.0.0
             ivprobit=?ignore-before-r=100.0.0
             mhurdle=?ignore-before-r=100.0.0
             brms=?ignore-before-r=4.4.0
