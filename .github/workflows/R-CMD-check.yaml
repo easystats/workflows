@@ -73,6 +73,7 @@ jobs:
             utils::install.packages("https://cran.r-project.org/src/contrib/Archive/lme4/lme4_1.1-35.tar.gz", type = "source")
             utils::install.packages("https://cran.r-project.org/src/contrib/Archive/TMB/TMB_1.9.9.tar.gz", type = "source")
           }
+          utils::install.packages("MatrixModels", type = "source")
         shell: Rscript {0}
 
       - uses: r-lib/actions/setup-r-dependencies@v2
@@ -85,6 +86,7 @@ jobs:
             any::BH
             any::RcppEigen
             Matrix=?ignore-before-r=100.0.0
+            MatrixModels=?ignore-before-r=100.0.0
             lme4=?ignore-before-r=100.0.0
             TMB=?ignore-before-r=100.0.0
             ivprobit=?ignore-before-r=100.0.0
