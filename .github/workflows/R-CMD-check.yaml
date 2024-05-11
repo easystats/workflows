@@ -78,6 +78,7 @@ jobs:
           cache-version: 5
           extra-packages: |
             any::rcmdcheck
+            any::BH
             Matrix=?ignore-before-r=100.0.0
             ivprobit=?ignore-before-r=100.0.0
             mhurdle=?ignore-before-r=100.0.0
