@@ -65,17 +65,21 @@ jobs:
       - name: Install packages from source
         run: |
           if (getRversion() >= '4.4.0') {
-            install.packages("Matrix", type = "source")
+            utils::install.packages("Matrix", type = "source")
           } else {
-            install.packages("https://cran.r-project.org/src/contrib/Archive/Matrix/Matrix_1.6-5.tar.gz", type = "source")
+            utils::install.packages("https://cran.r-project.org/src/contrib/Archive/Matrix/Matrix_1.6-5.tar.gz", type = "source")
           }
+          utils::install.packages(
+            c("BayesFactor", "cplm", "irlba", "lme4", "mmrm", "MatrixModels", "OpenMx", "glmmTMB", "TMB"),
+            type = "source"
+          )
         shell: Rscript {0}
 
       - uses: r-lib/actions/setup-r-dependencies@v2
         with:
           pak-version: devel
           upgrade: 'TRUE'
-          cache-version: 10
+          cache-version: 4
           extra-packages: |
             any::rcmdcheck
             any::BH
@@ -140,16 +144,6 @@ jobs:
             VGAM=?ignore-before-r=4.0.0
             ggside=?ignore-before-r=4.0.0
           needs: check
-
-      # install *after* other deps to avoid FreeADFunObject error
-      # glmmTMB uses `deparse1()`, which was introduced in R 4.0
-      - name: Install other packages from source
-        run: |
-          install.packages(
-            c("BayesFactor", "cplm", "irlba", "lme4", "mmrm", "MatrixModels", "OpenMx", "glmmTMB", "TMB"),
-            type = "source"
-          )
-        shell: Rscript {0}
 
       - uses: r-lib/actions/check-r-package@v2
         with:
