@@ -143,6 +143,8 @@ jobs:
             metaplus=?ignore-before-r=4.0.0
             multgee=?ignore-before-r=4.0.0
             panelr=?ignore-before-r=4.0.0
+            ICSOutlier=?ignore-before-r=4.0.0
+            multimode=?ignore-before-r=4.0.0
             jtools=?ignore-before-r=4.0.0
             mmrm=?ignore-before-r=4.0.0
             rsvd=?ignore-before-r=4.0.0
