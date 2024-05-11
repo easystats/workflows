@@ -113,6 +113,7 @@ jobs:
             AER=?ignore-before-r=4.1.0
             WRS2=?ignore-before-r=4.1.0
             tinytable=?ignore-before-r=4.1.0
+            survey=?ignore-before-r=4.1.0
             epiR=?ignore-before-r=4.0.0
             energy=?ignore-before-r=4.0.0
             gam=?ignore-before-r=4.0.0
