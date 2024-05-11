@@ -77,7 +77,7 @@ jobs:
             ), type = "source", dependencies = TRUE)
           }
           utils::install.packages(
-            c("BayesFactor", "MatrixModels", "quantreg"),
+            c("BayesFactor", "car", "MatrixModels", "quantreg"),
             type = "source", dependencies = TRUE
           )
         shell: Rscript {0}
@@ -92,6 +92,7 @@ jobs:
             any::BH
             any::RcppEigen
             BayesFactor=?ignore-before-r=100.0.0
+            car=?ignore-before-r=100.0.0
             Matrix=?ignore-before-r=100.0.0
             MatrixModels=?ignore-before-r=100.0.0
             lme4=?ignore-before-r=100.0.0
