@@ -76,24 +76,12 @@ jobs:
           pak-version: devel
           upgrade: "TRUE"
           cache-version: 5
-          # extra-packages: |
-          #
-          #   any::BH
-          #   BayesFactor=?ignore-before-r=100.0.0
-          #   cplm=?ignore-before-r=100.0.0
-          #   glmmTMB=?ignore-before-r=100.0.0
-          #   irlba=?ignore-before-r=100.0.0
-          #   lme4=?ignore-before-r=100.0.0
-          #   MatrixModels=?ignore-before-r=100.0.0
-          #   mmrm=?ignore-before-r=100.0.0
-          #   OpenMx=?ignore-before-r=100.0.0
-          #   TMB=?ignore-before-r=100.0.0
           extra-packages: |
             any::rcmdcheck
             Matrix=?ignore-before-r=100.0.0
             ivprobit=?ignore-before-r=100.0.0
             mhurdle=?ignore-before-r=100.0.0
-            brms=?ignore-before-r=4.4.0
+            brms=?ignore-before-r=4.3.0
             estimability=?ignore-before-r=4.3.0
             effects=?ignore-before-r=4.3.0
             nestedLogit=?ignore-before-r=4.3.0
