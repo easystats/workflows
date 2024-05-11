@@ -77,7 +77,7 @@ jobs:
             ), type = "source", dependencies = TRUE)
           }
           utils::install.packages(
-            c("BayesFactor", "MatrixModels"),
+            c("BayesFactor", "MatrixModels", "quantreg"),
             type = "source", dependencies = TRUE
           )
         shell: Rscript {0}
@@ -95,6 +95,7 @@ jobs:
             Matrix=?ignore-before-r=100.0.0
             MatrixModels=?ignore-before-r=100.0.0
             lme4=?ignore-before-r=100.0.0
+            quantreg=?ignore-before-r=100.0.0
             TMB=?ignore-before-r=100.0.0
             ivprobit=?ignore-before-r=100.0.0
             mhurdle=?ignore-before-r=100.0.0
