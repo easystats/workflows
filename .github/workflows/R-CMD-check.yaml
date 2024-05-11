@@ -64,7 +64,7 @@ jobs:
 
       - name: Install packages from source
         run: |
-          if (getRversion() >= '4.3.3') {
+          if (getRversion() >= '4.4.0') {
             utils::install.packages("Matrix", type = "source")
           } else {
             utils::install.packages("https://cran.r-project.org/src/contrib/Archive/Matrix/Matrix_1.6-2.tar.gz", type = "source")
