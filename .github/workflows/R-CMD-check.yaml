@@ -80,7 +80,7 @@ jobs:
         with:
           pak-version: devel
           upgrade: "TRUE"
-          cache-version: 5
+          cache-version: 8
           extra-packages: |
             any::rcmdcheck
             any::BH
