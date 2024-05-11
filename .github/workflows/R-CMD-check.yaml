@@ -69,16 +69,11 @@ jobs:
           } else {
             utils::install.packages("https://cran.r-project.org/src/contrib/Archive/Matrix/Matrix_1.6-2.tar.gz", type = "source")
           }
-      #     utils::install.packages(
-      #       c("BayesFactor", "cplm", "irlba", "lme4", "mmrm", "MatrixModels", "OpenMx", "glmmTMB", "TMB"),
-      #       type = "source"
-      #     )
-      #   shell: Rscript {0}
 
       - uses: r-lib/actions/setup-r-dependencies@v2
         with:
           pak-version: devel
-          upgrade: 'TRUE'
+          upgrade: "TRUE"
           cache-version: 5
           # extra-packages: |
           #
