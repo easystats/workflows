@@ -69,6 +69,7 @@ jobs:
           } else {
             utils::install.packages("https://cran.r-project.org/src/contrib/Archive/Matrix/Matrix_1.6-2.tar.gz", type = "source")
           }
+        shell: Rscript{0}
 
       - uses: r-lib/actions/setup-r-dependencies@v2
         with:
