@@ -64,20 +64,8 @@ jobs:
 
       - name: Install packages from source
         run: |
-          if (getRversion() >= '4.4.0') {
-            utils::install.packages(
-              c("Matrix", "lme4", "TMB"),
-              type = "source", dependencies = TRUE
-            )
-          } else {
-            utils::install.packages(c(
-              "https://cran.r-project.org/src/contrib/Archive/Matrix/Matrix_1.6-2.tar.gz",
-              "https://cran.r-project.org/src/contrib/Archive/lme4/lme4_1.1-35.tar.gz",
-              "https://cran.r-project.org/src/contrib/Archive/TMB/TMB_1.9.9.tar.gz"
-            ), type = "source", dependencies = TRUE)
-          }
           utils::install.packages(
-            c("BayesFactor", "car", "MatrixModels", "quantreg"),
+            c("Matrix", "lme4", "TMB"),
             type = "source", dependencies = TRUE
           )
         shell: Rscript {0}
@@ -91,12 +79,8 @@ jobs:
             any::rcmdcheck
             any::BH
             any::RcppEigen
-            BayesFactor=?ignore-before-r=100.0.0
-            car=?ignore-before-r=100.0.0
             Matrix=?ignore-before-r=100.0.0
-            MatrixModels=?ignore-before-r=100.0.0
             lme4=?ignore-before-r=100.0.0
-            quantreg=?ignore-before-r=100.0.0
             TMB=?ignore-before-r=100.0.0
             ivprobit=?ignore-before-r=100.0.0
             mhurdle=?ignore-before-r=100.0.0
