@@ -62,6 +62,26 @@ jobs:
           r-version: ${{ matrix.config.r }}
           use-public-rspm: true
 
+      - name: Install packages from source
+        run: |
+          if (getRversion() >= '4.4.0') {
+            utils::install.packages(
+              c("Matrix", "lme4", "TMB"),
+              type = "source", dependencies = TRUE
+            )
+          } else {
+            utils::install.packages(c(
+              "https://cran.r-project.org/src/contrib/Archive/Matrix/Matrix_1.6-2.tar.gz",
+              "https://cran.r-project.org/src/contrib/Archive/lme4/lme4_1.1-35.tar.gz",
+              "https://cran.r-project.org/src/contrib/Archive/TMB/TMB_1.9.9.tar.gz"
+            ), type = "source", dependencies = TRUE)
+          }
+          utils::install.packages(
+            c("BayesFactor", "car", "MatrixModels", "quantreg"),
+            type = "source", dependencies = TRUE
+          )
+        shell: Rscript {0}
+
       - uses: r-lib/actions/setup-r-dependencies@v2
         with:
           pak-version: devel
@@ -71,87 +91,15 @@ jobs:
             any::rcmdcheck
             any::BH
             any::RcppEigen
+            BayesFactor=?ignore-before-r=100.0.0
+            car=?ignore-before-r=100.0.0
+            Matrix=?ignore-before-r=100.0.0
+            MatrixModels=?ignore-before-r=100.0.0
+            lme4=?ignore-before-r=100.0.0
+            quantreg=?ignore-before-r=100.0.0
+            TMB=?ignore-before-r=100.0.0
             ivprobit=?ignore-before-r=100.0.0
             mhurdle=?ignore-before-r=100.0.0
-            BayesFactor?ignore-before-r=4.4.0
-            Matrix?ignore-before-r=4.4.0
-            MatrixModels?ignore-before-r=4.4.0
-            bayesplot?ignore-before-r=4.4.0
-            ggplot2?ignore-before-r=4.4.0
-            mgcv?ignore-before-r=4.4.0
-            ggridges?ignore-before-r=4.4.0
-            blavaan?ignore-before-r=4.4.0
-            rstan?ignore-before-r=4.4.0
-            bridgesampling?ignore-before-r=4.4.0
-            Brobdingnag?ignore-before-r=4.4.0
-            brms?ignore-before-r=4.4.0
-            gamm4?ignore-before-r=4.4.0
-            lme4?ignore-before-r=4.4.0
-            ggdist?ignore-before-r=4.4.0
-            glmmTMB?ignore-before-r=4.4.0
-            TMB?ignore-before-r=4.4.0
-            mediation?ignore-before-r=4.4.0
-            Hmisc?ignore-before-r=4.4.0
-            viridis?ignore-before-r=4.4.0
-            patchwork?ignore-before-r=4.4.0
-            rstanarm?ignore-before-r=4.4.0
-            shinystan?ignore-before-r=4.4.0
-            colourpicker?ignore-before-r=4.4.0
-            threejs?ignore-before-r=4.4.0
-            igraph?ignore-before-r=4.4.0
-            survival?ignore-before-r=4.4.0
-            see?ignore-before-r=4.4.0
-            correlation?ignore-before-r=4.4.0
-            ggraph?ignore-before-r=4.4.0
-            ggforce?ignore-before-r=4.4.0
-            ggrepel?ignore-before-r=4.4.0
-            tidygraph?ignore-before-r=4.4.0
-            graphlayouts?ignore-before-r=4.4.0
-            polycor?ignore-before-r=4.4.0
-            afex?ignore-before-r=4.4.0
-            pbkrtest?ignore-before-r=4.4.0
-            lmerTest?ignore-before-r=4.4.0
-            car?ignore-before-r=4.4.0
-            quantreg?ignore-before-r=4.4.0
-            parsnip?ignore-before-r=4.4.0
-            rms?ignore-before-r=4.4.0
-            multcomp?ignore-before-r=4.4.0
-            TH.data?ignore-before-r=4.4.0
-            gganimate?ignore-before-r=4.4.0
-            rtdists?ignore-before-r=4.4.0
-            msm?ignore-before-r=4.4.0
-            expm?ignore-before-r=4.4.0
-            AER?ignore-before-r=4.4.0
-            bigutilsr?ignore-before-r=4.4.0
-            RSpectra?ignore-before-r=4.4.0
-            cplm?ignore-before-r=4.4.0
-            DHARMa?ignore-before-r=4.4.0
-            gap?ignore-before-r=4.4.0
-            plotly?ignore-before-r=4.4.0
-            qgam?ignore-before-r=4.4.0
-            forecast?ignore-before-r=4.4.0
-            ICS?ignore-before-r=4.4.0
-            survey?ignore-before-r=4.4.0
-            ICSOutlier?ignore-before-r=4.4.0
-            ivreg?ignore-before-r=4.4.0
-            mclogit?ignore-before-r=4.4.0
-            metafor?ignore-before-r=4.4.0
-            multimode?ignore-before-r=4.4.0
-            ks?ignore-before-r=4.4.0
-            nestedLogit?ignore-before-r=4.4.0
-            effects?ignore-before-r=4.4.0
-            ordinal?ignore-before-r=4.4.0
-            qqplotr?ignore-before-r=4.4.0
-            factoextra?ignore-before-r=4.4.0
-            dendextend?ignore-before-r=4.4.0
-            FactoMineR?ignore-before-r=4.4.0
-            ggpubr?ignore-before-r=4.4.0
-            ggsci?ignore-before-r=4.4.0
-            cowplot?ignore-before-r=4.4.0
-            ggsignif?ignore-before-r=4.4.0
-            rstatix?ignore-before-r=4.4.0
-            ggside?ignore-before-r=4.4.0
-            merDeriv?ignore-before-r=4.4.0
             brms=?ignore-before-r=4.3.0
             estimability=?ignore-before-r=4.3.0
             effects=?ignore-before-r=4.3.0
