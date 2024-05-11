@@ -62,26 +62,26 @@ jobs:
           r-version: ${{ matrix.config.r }}
           use-public-rspm: true
 
-      - name: Install packages from source
-        run: |
-          utils::install.packages(
-            c("Matrix", "lme4", "TMB"),
-            type = "source", dependencies = TRUE
-          )
-        shell: Rscript {0}
+      # - name: Install packages from source
+      #   run: |
+      #     utils::install.packages(
+      #       c("Matrix", "lme4", "TMB"),
+      #       type = "source", dependencies = TRUE
+      #     )
+      #   shell: Rscript {0}
 
       - uses: r-lib/actions/setup-r-dependencies@v2
         with:
           pak-version: devel
-          upgrade: "TRUE"
+          #upgrade: "TRUE"
           cache-version: 8
           extra-packages: |
             any::rcmdcheck
+            any::Matrix
+            any::lme4
+            any::TMB
             any::BH
             any::RcppEigen
-            Matrix=?ignore-before-r=100.0.0
-            lme4=?ignore-before-r=100.0.0
-            TMB=?ignore-before-r=100.0.0
             ivprobit=?ignore-before-r=100.0.0
             mhurdle=?ignore-before-r=100.0.0
             brms=?ignore-before-r=4.3.0
