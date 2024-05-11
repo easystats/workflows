@@ -69,6 +69,7 @@ jobs:
           } else {
             utils::install.packages("https://cran.r-project.org/src/contrib/Archive/Matrix/Matrix_1.6-2.tar.gz", type = "source")
           }
+          utils::install.packages("lme4", type = "source")
         shell: Rscript {0}
 
       - uses: r-lib/actions/setup-r-dependencies@v2
@@ -79,7 +80,9 @@ jobs:
           extra-packages: |
             any::rcmdcheck
             any::BH
+            any::RcppEigen
             Matrix=?ignore-before-r=100.0.0
+            lme4=?ignore-before-r=100.0.0
             ivprobit=?ignore-before-r=100.0.0
             mhurdle=?ignore-before-r=100.0.0
             brms=?ignore-before-r=4.3.0
