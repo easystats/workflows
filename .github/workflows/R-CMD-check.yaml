@@ -76,7 +76,10 @@ jobs:
               "https://cran.r-project.org/src/contrib/Archive/TMB/TMB_1.9.9.tar.gz"
             ), type = "source", dependencies = TRUE)
           }
-          utils::install.packages("MatrixModels", type = "source", dependencies = TRUE)
+          utils::install.packages(
+            c("BayesFactor", "MatrixModels"),
+            type = "source", dependencies = TRUE
+          )
         shell: Rscript {0}
 
       - uses: r-lib/actions/setup-r-dependencies@v2
@@ -88,6 +91,7 @@ jobs:
             any::rcmdcheck
             any::BH
             any::RcppEigen
+            BayesFactor=?ignore-before-r=100.0.0
             Matrix=?ignore-before-r=100.0.0
             MatrixModels=?ignore-before-r=100.0.0
             lme4=?ignore-before-r=100.0.0
