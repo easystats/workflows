@@ -135,6 +135,7 @@ jobs:
             gam=?ignore-before-r=4.0.0
             gdtools=?ignore-before-r=4.0.0
             flextable=?ignore-before-r=4.0.0
+            ftExtra=?ignore-before-r=4.0.0
             gsl=?ignore-before-r=4.0.0
             fastICA=?ignore-before-r=4.0.0
             metafor=?ignore-before-r=4.0.0
