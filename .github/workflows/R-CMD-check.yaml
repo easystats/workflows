@@ -66,10 +66,11 @@ jobs:
         run: |
           if (getRversion() >= '4.4.0') {
             utils::install.packages("Matrix", type = "source")
+            utils::install.packages("lme4", type = "source")
           } else {
             utils::install.packages("https://cran.r-project.org/src/contrib/Archive/Matrix/Matrix_1.6-2.tar.gz", type = "source")
+            utils::install.packages("https://cran.r-project.org/src/contrib/Archive/lme4/lme4_1.1-35.tar.gz", type = "source")
           }
-          utils::install.packages("lme4", type = "source")
         shell: Rscript {0}
 
       - uses: r-lib/actions/setup-r-dependencies@v2
