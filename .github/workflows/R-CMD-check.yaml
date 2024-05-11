@@ -81,7 +81,7 @@ jobs:
           upgrade: 'TRUE'
           cache-version: 5
           # extra-packages: |
-          #   any::rcmdcheck
+          #
           #   any::BH
           #   BayesFactor=?ignore-before-r=100.0.0
           #   cplm=?ignore-before-r=100.0.0
@@ -94,6 +94,7 @@ jobs:
           #   OpenMx=?ignore-before-r=100.0.0
           #   TMB=?ignore-before-r=100.0.0
           extra-packages: |
+            any::rcmdcheck
             ivprobit=?ignore-before-r=100.0.0
             mhurdle=?ignore-before-r=100.0.0
             brms=?ignore-before-r=4.4.0
