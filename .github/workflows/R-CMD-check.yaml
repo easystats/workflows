@@ -65,15 +65,18 @@ jobs:
       - name: Install packages from source
         run: |
           if (getRversion() >= '4.4.0') {
-            utils::install.packages("Matrix", type = "source")
-            utils::install.packages("lme4", type = "source")
-            utils::install.packages("TMB", type = "source")
+            utils::install.packages(
+              c("Matrix", "lme4", "TMB"),
+              type = "source", dependencies = TRUE
+            )
           } else {
-            utils::install.packages("https://cran.r-project.org/src/contrib/Archive/Matrix/Matrix_1.6-2.tar.gz", type = "source")
-            utils::install.packages("https://cran.r-project.org/src/contrib/Archive/lme4/lme4_1.1-35.tar.gz", type = "source")
-            utils::install.packages("https://cran.r-project.org/src/contrib/Archive/TMB/TMB_1.9.9.tar.gz", type = "source")
+            utils::install.packages(c(
+              "https://cran.r-project.org/src/contrib/Archive/Matrix/Matrix_1.6-2.tar.gz",
+              "https://cran.r-project.org/src/contrib/Archive/lme4/lme4_1.1-35.tar.gz",
+              "https://cran.r-project.org/src/contrib/Archive/TMB/TMB_1.9.9.tar.gz"
+            ), type = "source", dependencies = TRUE)
           }
-          utils::install.packages("MatrixModels", type = "source")
+          utils::install.packages("MatrixModels", type = "source", dependencies = TRUE)
         shell: Rscript {0}
 
       - uses: r-lib/actions/setup-r-dependencies@v2
