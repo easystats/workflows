@@ -36,7 +36,7 @@ jobs:
           # Use 3.6 to trigger usage of RTools35
           #- { os: windows-latest, r: "3.6" }
           # use 4.1 to check with rtools40's older compiler
-          #- { os: windows-latest, r: "4.1" }
+          - { os: windows-latest, r: "4.1" }
 
           #- { os: ubuntu-latest, r: "next" }
           - { os: ubuntu-latest, r: "devel" }
