@@ -85,14 +85,14 @@ jobs:
             lme4=?ignore-before-r=100.0.0
             TMB=?ignore-before-r=100.0.0
             brms=?ignore-before-r=4.3.0
-            estimability=?ignore-before-r=4.3.0
             effects=?ignore-before-r=4.3.0
             nestedLogit=?ignore-before-r=4.3.0
             FactoMineR=?ignore-before-r=4.3.0
             factoextra=?ignore-before-r=4.3.0
-            emmeans=?ignore-before-r=4.3.0
             bayesQR=?ignore-before-r=4.2.0
             MuMIn=?ignore-before-r=4.2.0
+            estimability=?ignore-before-r=4.1.0
+            emmeans=?ignore-before-r=4.1.0
             ape=?ignore-before-r=4.1.0
             car=?ignore-before-r=4.1.0
             drc=?ignore-before-r=4.1.0
