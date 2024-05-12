@@ -81,6 +81,9 @@ jobs:
             any::RcppEigen
             ivprobit=?ignore-before-r=100.0.0
             mhurdle=?ignore-before-r=100.0.0
+            Matrix=?ignore-before-r=100.0.0
+            lme4=?ignore-before-r=100.0.0
+            TMB=?ignore-before-r=100.0.0
             brms=?ignore-before-r=4.3.0
             estimability=?ignore-before-r=4.3.0
             effects=?ignore-before-r=4.3.0
@@ -136,6 +139,11 @@ jobs:
             VGAM=?ignore-before-r=4.0.0
             ggside=?ignore-before-r=4.0.0
           needs: check
+
+      - name: Install packages from source
+        run: |
+          utils::install.packages(c("Matrix", "lme4", "TMB"), type = "source")
+        shell: Rscript {0}
 
       - uses: r-lib/actions/check-r-package@v2
         with:
