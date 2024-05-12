@@ -77,9 +77,6 @@ jobs:
           cache-version: 8
           extra-packages: |
             any::rcmdcheck
-            any::Matrix
-            any::lme4
-            any::TMB
             any::BH
             any::RcppEigen
             ivprobit=?ignore-before-r=100.0.0
