@@ -37,6 +37,7 @@ jobs:
 
       - name: Run Tests
         run: |
+            options(crayon.enabled = TRUE)
             pkgload::load_all()
             test_script_paths <- testthat::find_test_scripts("tests/testthat")
             test_with_warning_as_error <- function(...) {
