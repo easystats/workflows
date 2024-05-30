@@ -116,6 +116,7 @@ jobs:
             ftExtra=?ignore-before-r=4.0.0
             gsl=?ignore-before-r=4.0.0
             fastICA=?ignore-before-r=4.0.0
+            metaBMA=?ignore-before-r=4.0.0
             metafor=?ignore-before-r=4.0.0
             metadat=?ignore-before-r=4.0.0
             metaplus=?ignore-before-r=4.0.0
