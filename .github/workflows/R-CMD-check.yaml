@@ -102,6 +102,7 @@ jobs:
             pbkrtest=?ignore-before-r=4.1.0
             afex=?ignore-before-r=4.1.0
             car=?ignore-before-r=4.1.0
+            ICSOutlier=?ignore-before-r=4.1.0
             ICS=?ignore-before-r=4.1.0
             ivreg=?ignore-before-r=4.1.0
             AER=?ignore-before-r=4.1.0
@@ -123,7 +124,6 @@ jobs:
             metaplus=?ignore-before-r=4.0.0
             multgee=?ignore-before-r=4.0.0
             panelr=?ignore-before-r=4.0.0
-            ICSOutlier=?ignore-before-r=4.0.0
             multimode=?ignore-before-r=4.0.0
             jtools=?ignore-before-r=4.0.0
             mmrm=?ignore-before-r=4.0.0
