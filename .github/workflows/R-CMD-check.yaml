@@ -67,17 +67,17 @@ jobs:
       - uses: r-lib/actions/setup-r-dependencies@v2
         with:
           pak-version: devel
-          #upgrade: "TRUE"
+          upgrade: "TRUE"
           cache-version: 8
           extra-packages: |
             any::rcmdcheck
             any::BH
             any::RcppEigen
+            any::Matrix
+            any::lme4
+            any::TMB
             ivprobit=?ignore-before-r=100.0.0
             mhurdle=?ignore-before-r=100.0.0
-            Matrix=?ignore-before-r=100.0.0
-            lme4=?ignore-before-r=100.0.0
-            TMB=?ignore-before-r=100.0.0
             brms=?ignore-before-r=4.3.0
             effects=?ignore-before-r=4.3.0
             nestedLogit=?ignore-before-r=4.3.0
@@ -135,10 +135,10 @@ jobs:
             ggside=?ignore-before-r=4.0.0
           needs: check
 
-      - name: Install packages from source
-        run: |
-          utils::install.packages(c("Matrix", "lme4", "TMB"), type = "source")
-        shell: Rscript {0}
+      # - name: Install packages from source
+      #   run: |
+      #     utils::install.packages(c("Matrix", "lme4", "TMB"), type = "source")
+      #   shell: Rscript {0}
 
       - uses: r-lib/actions/check-r-package@v2
         with:
