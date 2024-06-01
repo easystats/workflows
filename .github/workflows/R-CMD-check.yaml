@@ -68,14 +68,10 @@ jobs:
         with:
           pak-version: devel
           upgrade: "TRUE"
-          cache-version: 8
           extra-packages: |
             any::rcmdcheck
             any::BH
             any::RcppEigen
-            any::Matrix
-            any::lme4
-            any::TMB
             ivprobit=?ignore-before-r=100.0.0
             mhurdle=?ignore-before-r=100.0.0
             brms=?ignore-before-r=4.3.0
