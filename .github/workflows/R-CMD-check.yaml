@@ -81,6 +81,7 @@ jobs:
             factoextra=?ignore-before-r=4.3.0
             bayesQR=?ignore-before-r=4.2.0
             MuMIn=?ignore-before-r=4.2.0
+            glmmTMB=?ignore-before-r=4.1.0
             estimability=?ignore-before-r=4.1.0
             emmeans=?ignore-before-r=4.1.0
             ape=?ignore-before-r=4.1.0
