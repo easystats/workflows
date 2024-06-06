@@ -33,6 +33,7 @@ jobs:
           extra-packages: |
             ivprobit=?ignore-before-r=100.0.0
             mhurdle=?ignore-before-r=100.0.0
+            r-lib/evaluate
             r-lib/pkgdown
             local::.
           needs: website
