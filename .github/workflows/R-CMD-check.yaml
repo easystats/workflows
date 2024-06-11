@@ -38,7 +38,6 @@ jobs:
           - { os: ubuntu-latest, r: "4.2" }
           - { os: ubuntu-latest, r: "4.1" }
           - { os: ubuntu-latest, r: "4.0" }
-          - { os: ubuntu-latest, r: "3.6" }
 
     env:
       GITHUB_PAT: ${{ secrets.GITHUB_TOKEN }}
@@ -67,7 +66,7 @@ jobs:
       - uses: r-lib/actions/setup-r-dependencies@v2
         with:
           pak-version: devel
-          upgrade: "TRUE"
+          #upgrade: "TRUE"
           extra-packages: |
             any::rcmdcheck
             any::BH
@@ -107,30 +106,6 @@ jobs:
             tinytable=?ignore-before-r=4.1.0
             srvyr=?ignore-before-r=4.1.0
             survey=?ignore-before-r=4.1.0
-            epiR=?ignore-before-r=4.0.0
-            energy=?ignore-before-r=4.0.0
-            gam=?ignore-before-r=4.0.0
-            gdtools=?ignore-before-r=4.0.0
-            flextable=?ignore-before-r=4.0.0
-            ftExtra=?ignore-before-r=4.0.0
-            gsl=?ignore-before-r=4.0.0
-            fastICA=?ignore-before-r=4.0.0
-            metaBMA=?ignore-before-r=4.0.0
-            metafor=?ignore-before-r=4.0.0
-            metadat=?ignore-before-r=4.0.0
-            metaplus=?ignore-before-r=4.0.0
-            multgee=?ignore-before-r=4.0.0
-            panelr=?ignore-before-r=4.0.0
-            multimode=?ignore-before-r=4.0.0
-            jtools=?ignore-before-r=4.0.0
-            mmrm=?ignore-before-r=4.0.0
-            rsvd=?ignore-before-r=4.0.0
-            sparsepca=?ignore-before-r=4.0.0
-            qqconf=?ignore-before-r=4.0.0
-            qqplotr=?ignore-before-r=4.0.0
-            rtdists=?ignore-before-r=4.0.0
-            VGAM=?ignore-before-r=4.0.0
-            ggside=?ignore-before-r=4.0.0
           needs: check
 
       # - name: Install packages from source
