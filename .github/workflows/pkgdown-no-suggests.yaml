@@ -32,13 +32,12 @@ jobs:
       - uses: r-lib/actions/setup-r-dependencies@v2
         with:
           pak-version: devel
-          #upgrade: "TRUE"
+          upgrade: "TRUE"
           dependencies: '"hard"'
           cache: false
           extra-packages: |
             any::knitr
             any::rmarkdown
-            r-lib/evaluate
             r-lib/pkgdown
             local::.
           needs: website
