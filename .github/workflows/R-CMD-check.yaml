@@ -95,6 +95,7 @@ jobs:
             rmcorr=?ignore-before-r=4.1.0
             rms=?ignore-before-r=4.1.0
             randomForest=?ignore-before-r=4.1.0
+            lavaan=?ignore-before-r=4.1.0
             pbkrtest=?ignore-before-r=4.1.0
             afex=?ignore-before-r=4.1.0
             car=?ignore-before-r=4.1.0
