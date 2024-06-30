@@ -27,17 +27,17 @@ jobs:
 
           - { os: windows-latest, r: "devel" }
           - { os: windows-latest, r: "release" }
-          - { os: windows-latest, r: "oldrel" }
+          - { os: windows-latest, r: "4.3" }
           # use 4.1 to check with rtools40's older compiler
-          - { os: windows-latest, r: "4.1" }
+          #- { os: windows-latest, r: "4.1" }
 
           #- { os: ubuntu-latest, r: "next" }
           - { os: ubuntu-latest, r: "devel" }
           - { os: ubuntu-latest, r: "release" }
           - { os: ubuntu-latest, r: "4.3" }
-          - { os: ubuntu-latest, r: "4.2" }
-          - { os: ubuntu-latest, r: "4.1" }
-          - { os: ubuntu-latest, r: "4.0" }
+          #- { os: ubuntu-latest, r: "4.2" }
+          #- { os: ubuntu-latest, r: "4.1" }
+          #- { os: ubuntu-latest, r: "4.0" }
 
     env:
       GITHUB_PAT: ${{ secrets.GITHUB_TOKEN }}
