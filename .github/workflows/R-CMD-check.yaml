@@ -27,14 +27,14 @@ jobs:
 
           - { os: windows-latest, r: "devel" }
           - { os: windows-latest, r: "release" }
-          - { os: windows-latest, r: "4.3" }
+          #- { os: windows-latest, r: "4.3" }
           # use 4.1 to check with rtools40's older compiler
           #- { os: windows-latest, r: "4.1" }
 
           #- { os: ubuntu-latest, r: "next" }
           - { os: ubuntu-latest, r: "devel" }
           - { os: ubuntu-latest, r: "release" }
-          - { os: ubuntu-latest, r: "4.3" }
+          #- { os: ubuntu-latest, r: "4.3" }
           #- { os: ubuntu-latest, r: "4.2" }
           #- { os: ubuntu-latest, r: "4.1" }
           #- { os: ubuntu-latest, r: "4.0" }
@@ -55,18 +55,10 @@ jobs:
           r-version: ${{ matrix.config.r }}
           use-public-rspm: true
 
-      # - name: Install packages from source
-      #   run: |
-      #     utils::install.packages(
-      #       c("Matrix", "lme4", "TMB"),
-      #       type = "source", dependencies = TRUE
-      #     )
-      #   shell: Rscript {0}
-
       - uses: r-lib/actions/setup-r-dependencies@v2
         with:
           pak-version: devel
-          #upgrade: "TRUE"
+          upgrade: "TRUE"
           extra-packages: |
             any::rcmdcheck
             any::BH
@@ -108,11 +100,6 @@ jobs:
             srvyr=?ignore-before-r=4.1.0
             survey=?ignore-before-r=4.1.0
           needs: check
-
-      # - name: Install packages from source
-      #   run: |
-      #     utils::install.packages(c("Matrix", "lme4", "TMB"), type = "source")
-      #   shell: Rscript {0}
 
       - uses: r-lib/actions/check-r-package@v2
         with:
