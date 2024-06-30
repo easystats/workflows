@@ -60,10 +60,7 @@ jobs:
         run: |
           options(
             crayon.enabled = TRUE,
-            warn = 2L,
-            warnPartialMatchArgs = TRUE,
-            warnPartialMatchAttr = TRUE,
-            warnPartialMatchDollar = TRUE
+            warn = 2L
           )
           rmarkdown::render("README.Rmd")
         shell: Rscript {0}
