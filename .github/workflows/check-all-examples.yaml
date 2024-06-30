@@ -32,7 +32,6 @@ jobs:
             any::BH
             any::devtools
             ivprobit=?ignore-before-r=100.0.0
-            mhurdle=?ignore-before-r=100.0.0
             local::.
           pak-version: devel
 

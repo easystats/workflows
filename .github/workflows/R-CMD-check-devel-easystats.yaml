@@ -44,7 +44,6 @@ jobs:
             easystats/correlation
             easystats/modelbased
             ivprobit=?ignore-before-r=100.0.0
-            mhurdle=?ignore-before-r=100.0.0
           needs: check
 
       - uses: r-lib/actions/check-r-package@v2

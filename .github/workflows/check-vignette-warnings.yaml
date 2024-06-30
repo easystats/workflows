@@ -34,7 +34,6 @@ jobs:
           cache-version: 2
           extra-packages: |
             ivprobit=?ignore-before-r=100.0.0
-            mhurdle=?ignore-before-r=100.0.0
             any::BH
             any::purrr
             local::.

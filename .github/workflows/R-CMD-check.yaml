@@ -64,7 +64,6 @@ jobs:
             any::BH
             any::RcppEigen
             ivprobit=?ignore-before-r=100.0.0
-            mhurdle=?ignore-before-r=100.0.0
             brms=?ignore-before-r=4.3.0
             effects=?ignore-before-r=4.3.0
             nestedLogit=?ignore-before-r=4.3.0
