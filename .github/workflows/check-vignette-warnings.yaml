@@ -36,6 +36,7 @@ jobs:
             ivprobit=?ignore-before-r=100.0.0
             any::BH
             any::purrr
+            stan-dev/cmdstanr
             local::.
           pak-version: devel
 

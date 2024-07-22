@@ -31,6 +31,7 @@ jobs:
           extra-packages: |
             any::devtools
             ivprobit=?ignore-before-r=100.0.0
+            stan-dev/cmdstanr
             local::.
           pak-version: devel
 
