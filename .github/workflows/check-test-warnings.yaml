@@ -28,12 +28,12 @@ jobs:
         with:
           upgrade: "TRUE"
           cache-version: 2
+          needs: check
+          pak-version: devel
           extra-packages: |
             any::devtools
             ivprobit=?ignore-before-r=100.0.0
-            stan-dev/cmdstanr
             local::.
-          pak-version: devel
 
       - name: Run Tests
         run: |

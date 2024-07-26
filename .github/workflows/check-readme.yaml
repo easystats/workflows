@@ -43,6 +43,7 @@ jobs:
           pak-version: devel
           upgrade: "TRUE"
           cache-version: 2
+          needs: check
           extra-packages: |
             local::.
             any::insight
