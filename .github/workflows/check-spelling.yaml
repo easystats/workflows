@@ -23,19 +23,9 @@ jobs:
         with:
           use-public-rspm: true
 
-      - uses: r-lib/actions/setup-r-dependencies@v2
-        with:
-          pak-version: devel
-          upgrade: "TRUE"
-          cache-version: 2
-          dependencies: '"hard"'
-          extra-packages: |
-            any::rcmdcheck
-            any::rlang
-            any::spelling
-
       - name: Spell check
         run: |
+          install.packages(c("spelling", "cli"))
           options(crayon.enabled = TRUE)
           spelling_mistakes <- spelling::spell_check_package()
           cli::cli_rule()
