@@ -95,6 +95,7 @@ jobs:
             tinytable=?ignore-before-r=4.1.0
             srvyr=?ignore-before-r=4.1.0
             survey=?ignore-before-r=4.1.0
+            distributional=?ignore-before-r=4.2.0
           needs: check
 
       - uses: r-lib/actions/check-r-package@v2
