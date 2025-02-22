@@ -60,6 +60,7 @@ jobs:
             any::BH
             any::RcppEigen
             ivprobit=?ignore-before-r=100.0.0
+            rms=?ignore-before-r=4.4.0
             brms=?ignore-before-r=4.3.0
             effects=?ignore-before-r=4.3.0
             nestedLogit=?ignore-before-r=4.3.0
@@ -67,6 +68,9 @@ jobs:
             factoextra=?ignore-before-r=4.3.0
             bayesQR=?ignore-before-r=4.2.0
             MuMIn=?ignore-before-r=4.2.0
+            distributional=?ignore-before-r=4.2.0
+            serp=?ignore-before-r=4.1.0
+            VGAM=?ignore-before-r=4.1.0
             glmmTMB=?ignore-before-r=4.1.0
             estimability=?ignore-before-r=4.1.0
             emmeans=?ignore-before-r=4.1.0
@@ -80,7 +84,6 @@ jobs:
             rstatix=?ignore-before-r=4.1.0
             PROreg=?ignore-before-r=4.1.0
             rmcorr=?ignore-before-r=4.1.0
-            rms=?ignore-before-r=4.4.0
             randomForest=?ignore-before-r=4.1.0
             lavaan=?ignore-before-r=4.1.0
             pbkrtest=?ignore-before-r=4.1.0
@@ -95,7 +98,6 @@ jobs:
             tinytable=?ignore-before-r=4.1.0
             srvyr=?ignore-before-r=4.1.0
             survey=?ignore-before-r=4.1.0
-            distributional=?ignore-before-r=4.2.0
           needs: check
 
       - uses: r-lib/actions/check-r-package@v2
