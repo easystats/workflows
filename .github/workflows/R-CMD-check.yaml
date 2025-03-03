@@ -62,6 +62,8 @@ jobs:
             ivprobit=?ignore-before-r=100.0.0
             rms=?ignore-before-r=4.4.0
             brms=?ignore-before-r=4.3.0
+            cgam=?ignore-before-r=4.4.0
+            WeightIt=?ignore-before-r=4.1.0
             effects=?ignore-before-r=4.3.0
             nestedLogit=?ignore-before-r=4.3.0
             FactoMineR=?ignore-before-r=4.3.0
