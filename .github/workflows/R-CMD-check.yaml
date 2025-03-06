@@ -73,6 +73,7 @@ jobs:
             distributional=?ignore-before-r=4.2.0
             Hmisc=?ignore-before-r=4.2.0
             mediation=?ignore-before-r=4.2.0
+            pbkrtest=?ignore-before-r=4.2.0
             serp=?ignore-before-r=4.1.0
             VGAM=?ignore-before-r=4.1.0
             glmmTMB=?ignore-before-r=4.1.0
@@ -93,12 +94,12 @@ jobs:
             ICSOutlier=?ignore-before-r=4.1.0
             ICS=?ignore-before-r=4.1.0
             ivreg=?ignore-before-r=4.1.0
-            pbkrtest=?ignore-before-r=4.2.0
             AER=?ignore-before-r=4.1.0
             WRS2=?ignore-before-r=4.1.0
             tinytable=?ignore-before-r=4.1.0
             srvyr=?ignore-before-r=4.1.0
             survey=?ignore-before-r=4.1.0
+            correlation=?ignore-before-r=4.1.0
           needs: check
 
       - uses: r-lib/actions/check-r-package@v2
