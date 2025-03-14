@@ -77,6 +77,7 @@ jobs:
             serp=?ignore-before-r=4.1.0
             VGAM=?ignore-before-r=4.1.0
             glmmTMB=?ignore-before-r=4.1.0
+            collapse=?ignore-before-r=4.1.0
             estimability=?ignore-before-r=4.1.0
             emmeans=?ignore-before-r=4.1.0
             ape=?ignore-before-r=4.1.0
