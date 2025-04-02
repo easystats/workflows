@@ -63,8 +63,10 @@ jobs:
             rms=?ignore-before-r=4.4.0
             brms=?ignore-before-r=4.3.0
             cgam=?ignore-before-r=4.4.0
+            robustlmm=?ignore-before-r=4.4.0
+            multgee=?ignore-before-r=4.1.0
             VGAM=?ignore-before-r=4.1.0
-            collapse=?ignore-before-r=4.1.0
+            plm=?ignore-before-r=4.1.0
             WeightIt=?ignore-before-r=4.1.0
             effects=?ignore-before-r=4.3.0
             nestedLogit=?ignore-before-r=4.3.0
@@ -92,8 +94,8 @@ jobs:
             rmcorr=?ignore-before-r=4.1.0
             randomForest=?ignore-before-r=4.1.0
             lavaan=?ignore-before-r=4.1.0
-            afex=?ignore-before-r=4.1.0
-            car=?ignore-before-r=4.1.0
+            afex=?ignore-before-r=4.2.0
+            car=?ignore-before-r=4.2.0
             ICSOutlier=?ignore-before-r=4.1.0
             ICS=?ignore-before-r=4.1.0
             ivreg=?ignore-before-r=4.1.0
@@ -103,6 +105,7 @@ jobs:
             srvyr=?ignore-before-r=4.1.0
             survey=?ignore-before-r=4.1.0
             correlation=?ignore-before-r=4.1.0
+            svylme=?ignore-before-r=4.1.0
           needs: check
 
       - uses: r-lib/actions/check-r-package@v2
