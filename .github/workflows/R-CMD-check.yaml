@@ -63,13 +63,15 @@ jobs:
             rms=?ignore-before-r=4.4.0
             brms=?ignore-before-r=4.3.0
             cgam=?ignore-before-r=4.4.0
+            VGAM=?ignore-before-r=4.1.0
+            collapse=?ignore-before-r=4.1.0
             WeightIt=?ignore-before-r=4.1.0
             effects=?ignore-before-r=4.3.0
             nestedLogit=?ignore-before-r=4.3.0
             FactoMineR=?ignore-before-r=4.3.0
             factoextra=?ignore-before-r=4.3.0
             bayesQR=?ignore-before-r=4.2.0
-            MuMIn=?ignore-before-r=4.2.0
+            MuMIn=?ignore-before-r=4.4.0
             distributional=?ignore-before-r=4.2.0
             Hmisc=?ignore-before-r=4.2.0
             mediation=?ignore-before-r=4.2.0
