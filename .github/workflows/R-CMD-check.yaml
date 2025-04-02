@@ -99,7 +99,7 @@ jobs:
             randomForest=?ignore-before-r=4.1.0
             lavaan=?ignore-before-r=4.1.0
             afex=?ignore-before-r=4.2.0
-            car=?ignore-before-r=4.2.0
+            car=?ignore-before-r=4.4.0
             ICSOutlier=?ignore-before-r=4.1.0
             ICS=?ignore-before-r=4.1.0
             ivreg=?ignore-before-r=4.2.0
