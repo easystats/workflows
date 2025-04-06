@@ -90,7 +90,6 @@ name: test-coverage
 
 | Workflow | Purpose |
 |:---|:---|
-| R-CMD-check-devel-easystats.yaml | Runs R CMD check with the development version of all `easystats` packages |
 | update-to-latest-easystats.yaml | Creates a PR to bump all `easystats` dependencies to their latest CRAN version. |
 
 ## Acknowledgments
