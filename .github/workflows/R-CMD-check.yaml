@@ -68,6 +68,7 @@ jobs:
             robustlmm=?ignore-before-r=4.4.0
             MuMIn=?ignore-before-r=4.4.0
             BayesFactor=?ignore-before-r=4.4.0
+            gamm4=?ignore-before-r=4.4.0
             MatrixModels=?ignore-before-r=4.4.0
             quantreg=?ignore-before-r=4.4.0
             car=?ignore-before-r=4.4.0
