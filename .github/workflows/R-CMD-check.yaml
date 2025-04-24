@@ -64,6 +64,7 @@ jobs:
             ClassDiscovery=?ignore-before-r=4.4.0
             PCDimension=?ignore-before-r=4.4.0
             cgam=?ignore-before-r=4.4.0
+            ordbetareg=?ignore-before-r=4.4.0
             robustlmm=?ignore-before-r=4.4.0
             MuMIn=?ignore-before-r=4.4.0
             BayesFactor=?ignore-before-r=4.4.0
@@ -75,10 +76,10 @@ jobs:
             fungible=?ignore-before-r=4.4.0
             Brobdingnag=?ignore-before-r=4.4.0
             bridgesampling=?ignore-before-r=4.4.0
+            brms=?ignore-before-r=4.4.0
             metaBMA=?ignore-before-r=4.4.0
             effects=?ignore-before-r=4.3.0
             nestedLogit=?ignore-before-r=4.3.0
-            brms=?ignore-before-r=4.3.0
             FactoMineR=?ignore-before-r=4.3.0
             factoextra=?ignore-before-r=4.3.0
             distributional=?ignore-before-r=4.2.0
