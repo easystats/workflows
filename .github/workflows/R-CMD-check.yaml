@@ -61,6 +61,8 @@ jobs:
             any::RcppEigen
             ivprobit=?ignore-before-r=100.0.0
             rms=?ignore-before-r=4.4.0
+            ClassDiscovery=?ignore-before-r=4.4.0
+            PCDimension=?ignore-before-r=4.4.0
             cgam=?ignore-before-r=4.4.0
             robustlmm=?ignore-before-r=4.4.0
             MuMIn=?ignore-before-r=4.4.0
