@@ -87,11 +87,14 @@ jobs:
             afex=?ignore-before-r=4.2.0
             bayesQR=?ignore-before-r=4.2.0
             distributional=?ignore-before-r=4.2.0
+            ggstats=?ignore-before-r=4.2.0
+            GGally=?ignore-before-r=4.2.0
             Hmisc=?ignore-before-r=4.2.0
             ivreg=?ignore-before-r=4.2.0
             mediation=?ignore-before-r=4.2.0
             pbkrtest=?ignore-before-r=4.2.0
             PROreg=?ignore-before-r=4.2.0
+            qgraph=?ignore-before-r=4.2.0
             ape=?ignore-before-r=4.1.0
             censReg=?ignore-before-r=4.1.0
             collapse=?ignore-before-r=4.1.0
