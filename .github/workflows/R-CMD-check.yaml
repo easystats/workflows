@@ -86,6 +86,7 @@ jobs:
             AER=?ignore-before-r=4.2.0
             afex=?ignore-before-r=4.2.0
             bayesQR=?ignore-before-r=4.2.0
+            discovr=?ignore-before-r=4.2.0
             distributional=?ignore-before-r=4.2.0
             ggstats=?ignore-before-r=4.2.0
             GGally=?ignore-before-r=4.2.0
