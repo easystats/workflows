@@ -46,6 +46,7 @@ jobs:
           options(crayon.enabled = TRUE)
           library(lintr)
           lint_package(linters = all_linters(
+            coalesce_linter = NULL,
             absolute_path_linter = NULL,
             cyclocomp_linter(40L),
             if_not_else_linter(exceptions = character(0L)),
