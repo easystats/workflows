@@ -13,7 +13,7 @@ jobs:
       GITHUB_PAT: ${{ secrets.GITHUB_TOKEN }}
 
     steps:
-      - uses: actions/checkout@v5
+      - uses: actions/checkout@v6
 
       # needed for easystats tests for dashboard
       - uses: r-lib/actions/setup-pandoc@v2
