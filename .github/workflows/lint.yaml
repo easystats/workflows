@@ -24,9 +24,7 @@ jobs:
 
       - uses: r-lib/actions/setup-r-dependencies@v2
         with:
-          upgrade: "TRUE"
           cache-version: 2
-          pak-version: devel
           extra-packages: |
             r-lib/lintr
             local::.

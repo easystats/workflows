@@ -30,9 +30,7 @@ jobs:
 
       - uses: r-lib/actions/setup-r-dependencies@v2
         with:
-          upgrade: "TRUE"
           cache-version: 2
-          pak-version: devel
           needs: check
           extra-packages: |
             ivprobit=?ignore-before-r=100.0.0

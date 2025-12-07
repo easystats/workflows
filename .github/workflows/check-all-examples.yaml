@@ -26,14 +26,12 @@ jobs:
 
       - uses: r-lib/actions/setup-r-dependencies@v2
         with:
-          upgrade: "TRUE"
           cache-version: 2
           extra-packages: |
             any::BH
             any::devtools
             ivprobit=?ignore-before-r=100.0.0
             local::.
-          pak-version: devel
 
       - name: Run examples
         run: |
