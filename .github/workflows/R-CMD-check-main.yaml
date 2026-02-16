@@ -51,7 +51,7 @@ jobs:
         with:
           upload-snapshots: true
           upload-results: true
-          error-on: "warning"
+          error-on: '"warning"'
         env:
           _R_CHECK_CRAN_INCOMING_REMOTE_: false
           _R_CHECK_CRAN_INCOMING_: false
