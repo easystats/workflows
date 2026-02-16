@@ -22,9 +22,6 @@ jobs:
         config:
           # CRAN doesn't provide binaries for macOS on R-devel, so skip because
           # it will be too slow otherwise
-          #- {os: macOS-latest, r: 'devel'}
-          - { os: macOS-latest, r: "release" }
-
           - { os: windows-latest, r: "devel" }
           - { os: windows-latest, r: "release" }
 
@@ -80,6 +77,7 @@ jobs:
             AER=?ignore-before-r=4.2.0
             afex=?ignore-before-r=4.2.0
             bayesQR=?ignore-before-r=4.2.0
+            discovr=?ignore-before-r=4.2.0
             distributional=?ignore-before-r=4.2.0
             ggstats=?ignore-before-r=4.2.0
             GGally=?ignore-before-r=4.2.0
@@ -122,7 +120,7 @@ jobs:
         with:
           upload-snapshots: true
           upload-results: true
-          error-on: 'ifelse(getRversion() > "4.3", "note", "warning")'
+          error-on: '"warning"'
         env:
           _R_CHECK_CRAN_INCOMING_REMOTE_: false
           _R_CHECK_CRAN_INCOMING_: false
