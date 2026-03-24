@@ -34,26 +34,39 @@ jobs:
         run: |
           options(crayon.enabled = TRUE)
           library(lintr)
+          # Air takes care of all formatting
           lint_package(linters = all_linters(
-            coalesce_linter = NULL,
             absolute_path_linter = NULL,
+            brace_linter = NULL,
+            commas_linter = NULL,
+            coalesce_linter = NULL,
+            commented_code_linter = NULL,
             cyclocomp_linter(40L),
+            commas_linter = NULL,
+            function_left_parenthesis_linter = NULL,
             if_not_else_linter(exceptions = character(0L)),
             indentation_linter = NULL,
+            infix_spaces_linter = NULL,
             implicit_integer_linter = NULL,
             library_call_linter = NULL,
-            line_length_linter(120L),
+            line_length_linter = NULL,
+            paren_body_linter = NULL,
             namespace_linter = NULL,
             nonportable_path_linter = NULL,
             object_length_linter(50L),
             object_name_linter = NULL,
             object_usage_linter = NULL,
             one_call_pipe_linter = NULL,
+            semicolon_linter = NULL,
+            spaces_inside_linter = NULL,
+            spaces_left_parentheses_linter = NULL,
             todo_comment_linter = NULL,
-            commented_code_linter = NULL,
+            trailing_blank_lines_linter = NULL,
+            trailing_whitespace_linter = NULL,
             undesirable_function_linter(c("mapply" = NA, "setwd" = NA)),
             undesirable_operator_linter = NULL,
             unnecessary_concatenation_linter(allow_single_expression = FALSE),
-            unused_import_linter = NULL
+            unused_import_linter = NULL,
+            whitespace_linter = NULL
           ))
         shell: Rscript {0}
