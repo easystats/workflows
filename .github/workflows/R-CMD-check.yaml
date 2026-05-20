@@ -58,6 +58,7 @@ jobs:
             any::rcmdcheck
             any::RcppEigen
             ivprobit=?ignore-before-r=100.0.0
+            discovr=?ignore-before-r=4.4.0
             BayesFactor=?ignore-before-r=4.4.0
             bridgesampling=?ignore-before-r=4.4.0
             Brobdingnag=?ignore-before-r=4.4.0
