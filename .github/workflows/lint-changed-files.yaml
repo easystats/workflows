@@ -53,7 +53,7 @@ jobs:
             commented_code_linter = NULL,
             cyclocomp_linter(40L),
             commas_linter = NULL,
-            function_left_parenthesis_linter = NULL,
+            function_left_parentheses_linter = NULL,
             if_not_else_linter(exceptions = character(0L)),
             indentation_linter = NULL,
             infix_spaces_linter = NULL,
