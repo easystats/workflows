@@ -92,6 +92,12 @@ name: test-coverage
 |:---|:---|
 | update-to-latest-easystats.yaml | Creates a PR to bump all `easystats` dependencies to their latest CRAN version. |
 
+The `update-to-latest-easystats.yaml` workflow can receive an optional
+`EASYSTATS_BOT_TOKEN` secret. Pass a fine-grained PAT or GitHub App
+token if the pull requests created by this workflow should trigger the
+usual `pull_request` or `push` checks. If this secret is not supplied,
+the workflow falls back to the default `GITHUB_TOKEN`.
+
 ## Acknowledgments
 
 These workflows are based on
