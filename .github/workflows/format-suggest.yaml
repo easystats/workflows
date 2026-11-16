@@ -41,7 +41,7 @@ jobs:
         run: air format .
 
       - name: Suggest
-        uses: reviewdog/action-suggester@ac5ce6d94e35c00530447dc63c271e38e4fd36c6 # v1
+        uses: reviewdog/action-suggester@fd22a83b1ebc13fd8aee5d57b06793fce6f20fb9 # v1
         with:
           level: error
           fail_level: error
