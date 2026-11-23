@@ -5,6 +5,10 @@
 
 on:
   workflow_call:
+    secrets:
+      CODECOV_TOKEN:
+        description: Codecov upload token for repositories that require authentication
+        required: false
 
 concurrency:
   group: ${{ github.workflow }}-${{ github.head_ref }}
@@ -34,11 +38,47 @@ jobs:
           cache-version: 2
           extra-packages: |
             any::covr
+            any::xml2
             local::.
           needs: coverage
 
       - name: Test coverage
+        id: coverage
         run: |
           options(crayon.enabled = TRUE)
-          covr::codecov(quiet = FALSE)
+          runner_temp <- normalizePath(Sys.getenv("RUNNER_TEMP"), winslash = "/")
+          coverage <- covr::package_coverage(
+            quiet = FALSE,
+            clean = FALSE,
+            install_path = file.path(runner_temp, "coverage-package")
+          )
+          print(coverage)
+          covr::to_cobertura(coverage, filename = "cobertura.xml")
         shell: Rscript {0}
+
+      - name: Upload coverage to Codecov
+        uses: codecov/codecov-action@303a32d7a59b442fa8d48b6a1cc6825c09c847a5 # v7.1.1
+        with:
+          fail_ci_if_error: ${{ github.event_name != 'pull_request' || secrets.CODECOV_TOKEN != '' }}
+          files: ./cobertura.xml
+          plugins: noop
+          disable_search: true
+          token: ${{ secrets.CODECOV_TOKEN }}
+
+      - name: Show testthat output
+        if: failure() && steps.coverage.outcome == 'failure'
+        run: |
+          $coveragePath = Join-Path $env:RUNNER_TEMP 'coverage-package'
+          if (Test-Path -LiteralPath $coveragePath) {
+            Get-ChildItem -LiteralPath $coveragePath -Filter 'testthat.Rout*' -File -Recurse |
+              ForEach-Object { Get-Content -LiteralPath $_.FullName }
+          }
+        shell: pwsh
+
+      - name: Upload testthat output
+        if: failure() && steps.coverage.outcome == 'failure'
+        uses: actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9 # v7.0.2
+        with:
+          name: coverage-test-failures
+          path: ${{ runner.temp }}/coverage-package/**/testthat.Rout*
+          if-no-files-found: ignore
