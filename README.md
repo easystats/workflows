@@ -36,6 +36,26 @@ jobs:
     uses: easystats/workflows/.github/workflows/check-spelling.yaml@main
 ```
 
+### Uploading test coverage to Codecov
+
+The test coverage workflow generates a Cobertura report and uploads it
+with the Codecov action. If [Codecov requires
+authentication](https://docs.codecov.com/docs/codecov-tokens) for your
+repository, add a `CODECOV_TOKEN` secret in the caller repository and
+pass it to the reusable workflow.
+
+``` yaml
+jobs:
+  test-coverage:
+    uses: easystats/workflows/.github/workflows/test-coverage.yaml@main
+    secrets:
+      CODECOV_TOKEN: ${{ secrets.CODECOV_TOKEN }}
+```
+
+Upload errors fail the workflow on pushes and on pull requests that
+supply a token. If coverage generation fails, the workflow prints and
+saves any available testthat output.
+
 ## Copying workflows
 
 If you wish to copy any of these workflows in your own pages, you can do
